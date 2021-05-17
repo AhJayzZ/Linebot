@@ -11,7 +11,14 @@ var bot = linebot({
 //-------------------------------------------------------------------------
 
 bot.on('message', function(event) {
-    console.log(event); //把收到訊息的 event 印出來看看
+    //把收到訊息的 event 印出來看看
+    console.log(event);
+
+
+    if (event.message.type = 'text') {
+        var msg = event.message.text;
+        event.reply(msg).then(function(data) { console.log(msg); }).catch(function(error) { console.log('error'); })
+    }
 });
 
 const app = express();
