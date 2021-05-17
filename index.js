@@ -22,11 +22,10 @@ bot.on('message', function(event) {
         var msg = event.message.text;
 
         // event.reply(msg).then(function(data) { console.log(msg); }).catch(function(error) { console.log('error'); })
-        for (i = 0; i < 5; i++) {
+        for (i = 0; i < name.length; i++) {
             if (msg.indexOf(name[i])) {
                 event.reply(name[i] + '我幹你娘啦');
             }
-
         }
 
         if (msg == '!抽' || msg == '!抽卡') {
