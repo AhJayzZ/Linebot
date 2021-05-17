@@ -14,11 +14,23 @@ bot.on('message', function(event) {
     //把收到訊息的 event 印出來看看
     console.log(event);
 
-
+    // Reply the same message 
     if (event.message.type = 'text') {
         var msg = event.message.text;
-        event.reply(msg).then(function(data) { console.log(msg); }).catch(function(error) { console.log('error'); })
+
+        // event.reply(msg).then(function(data) { console.log(msg); }).catch(function(error) { console.log('error'); })
+        if (msg == '張上為' || msg == '@張上為') {
+            event.reply('張上為我幹你娘啦');
+            console.log(msg);
+        }
+        if (msg == '!抽' || msg == '!抽卡') {
+            event.reply('抽你媽啦，還沒弄好');
+            console.log(msg);
+        }
+
     }
+
+
 });
 
 const app = express();
