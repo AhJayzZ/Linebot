@@ -22,7 +22,7 @@ bot.on('message', function(event) {
         var msg = event.message.text;
 
         for (i = 0; i < name.length; i++) {
-            if (msg.search("王勁杰") != -1) { event.reply('王勁杰是我老大!'); break; }
+            if (msg.search("王勁杰") != -1) { event.reply('王勁杰是我老大，他還在睡覺!'); break; }
 
             if (msg.search(name[i]) != -1) {
                 event.reply(name[i] + '我幹你娘啦');
@@ -33,8 +33,10 @@ bot.on('message', function(event) {
         if (msg == '!抽' || msg == '!抽卡') {
             event.reply('抽殺小啦，我還在學習抽卡啦');
         }
-        if (msg == '可憐') {
+        if (msg.search('可憐') != -1) {
             event.reply('你全家才可憐');
+            event.reply('沒');
+            event.reply('我才可憐QQ');
         }
         console.log(msg);
     }
