@@ -23,9 +23,9 @@ bot.on('message', function(event) {
 
         // event.reply(msg).then(function(data) { console.log(msg); }).catch(function(error) { console.log('error'); })
         for (i = 0; i < name.length; i++) {
-            if (msg.search("王勁杰")) { event.reply('王勁杰是我老大!'); break; }
+            if (msg.search("王勁杰") == 1) { event.reply('王勁杰是我老大!'); break; }
 
-            if (msg.search(name[i])) {
+            if (msg.search(name[i]) == 1) {
                 event.reply(name[i] + '我幹你娘啦');
             }
         }
