@@ -10,6 +10,9 @@ var bot = linebot({
 
 //-------------------------------------------------------------------------
 
+
+var name = ['張上為', '林明輝', '莊家豪', '陳鴻宇', '張庭偉', '喇賽', '曾國佑', '翁廷翰', '姚勝文', '陳孟謙', '辛世文']
+
 bot.on('message', function(event) {
     //把收到訊息的 event 印出來看看
     console.log(event);
@@ -19,15 +22,20 @@ bot.on('message', function(event) {
         var msg = event.message.text;
 
         // event.reply(msg).then(function(data) { console.log(msg); }).catch(function(error) { console.log('error'); })
-        if (msg == '張上為' || msg == '@張上為') {
-            event.reply('張上為我幹你娘啦');
-            console.log(msg);
-        }
-        if (msg == '!抽' || msg == '!抽卡') {
-            event.reply('抽你媽啦，還沒弄好');
-            console.log(msg);
+        for (i = 0; i < 5; i++) {
+            if (msg.indexOf(name[i])) {
+                event.reply(name[i] + '我幹你娘啦');
+            }
+
         }
 
+        if (msg == '!抽' || msg == '!抽卡') {
+            event.reply('抽殺小啦，我還在學習抽卡啦');
+        }
+        if (msg == '可憐') {
+            event.reply('你全家才可憐');
+        }
+        console.log(msg);
     }
 
 
