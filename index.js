@@ -34,9 +34,7 @@ bot.on('message', function(event) {
             event.reply('抽殺小啦，我還在學習抽卡啦');
 
         if (msg.search('可憐') != -1)
-            event.reply('你全家才可憐').then(event.reply('沒')).then(event.reply('我才可憐QQ'))
-
-
+            event.reply('你全家才可憐').then('沒，我才可憐QQ')
 
         console.log(msg);
     }
