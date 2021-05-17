@@ -11,7 +11,7 @@ var bot = linebot({
 //-------------------------------------------------------------------------
 
 
-var name = ["張上為", "林明輝", "莊家豪", "陳鴻宇", "張庭偉", "喇賽", "曾國佑", "翁廷翰", "姚勝文", "陳孟謙", "辛世文"]
+var name = ["張上為", "林明輝", "莊家豪", "陳鴻宇", "張庭偉", "喇賽", "曾國佑", "翁廷翰", "姚勝文", "陳孟謙", "辛世文"];
 
 bot.on('message', function(event) {
     //把收到訊息的 event 印出來看看
@@ -24,9 +24,9 @@ bot.on('message', function(event) {
         event.reply(msg).then(function(data) { console.log(msg); }).catch(function(error) { console.log('error'); })
 
         for (i = 0; i < name.length; i++) {
-            if (msg.search("王勁杰") == 1) { event.reply('王勁杰是我老大!'); break; }
+            if (msg.search("王勁杰") != 1) { event.reply('王勁杰是我老大!'); break; }
 
-            if (msg.search(name[i]) == 1) {
+            if (msg.search(name[i]) != 1) {
                 event.reply(name[i] + '我幹你娘啦');
                 break;
             }
