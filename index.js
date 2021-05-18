@@ -87,8 +87,7 @@ function drawcard(msg) {
             var htmlDoc = parser.parseFromString(body, 'text/html');
             var random_index = Math.floor(Math.random() * 20);
             //var image_class_name = htmlDoc.getElementsByClassName('sensitive-content')[random_index].
-            var image_class_name = htmlDoc.getElementsByClassName('img-fluid lazy loaded')[random_index].getAttribute('src')
-
+            var links = htmlDoc.querySelectorAll("sensitive-content");
             console.log('image class name:', image_class_name);
 
         });
