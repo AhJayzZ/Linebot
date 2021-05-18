@@ -1,6 +1,6 @@
 const linebot = require('linebot')
 const express = require('express')
-const Request = require('request')
+const request = require('request')
 const DOMParser = require('dom-parser')
 
 
@@ -84,9 +84,7 @@ function drawcard(event, msg) {
         }
 
 
-        var myrequest = new Request(meme_url, myoption)
-
-        myrequest(function(error, response, body) {
+        request(meme_url, myoption, function(error, response, body) {
             console.error('error:', error); // Print the error if one occurred
             console.log('statusCode:', response & response.statusCode); // Print the response status code if a response was received
             //console.log('body:', body);                               // Print the HTML for the Google homepage.
@@ -102,11 +100,10 @@ function drawcard(event, msg) {
                 originalContentUrl: image_url,
                 previewImageUrl: image_url,
             }
+
             event.reply(image_msg)
-        });
-
+        })
     }
-}
 
 
 
@@ -117,12 +114,12 @@ function drawcard(event, msg) {
 
 
 
-const app = express();
-const linebotParser = bot.parser();
-app.post('/', linebotParser);
+    const app = express();
+    const linebotParser = bot.parser();
+    app.post('/', linebotParser);
 
-//因為 express 預設走 port 3000，而 heroku 上預設卻不是，要透過下列程式轉換
-var server = app.listen(process.env.PORT || 8080, function() {
-    var port = server.address().port;
-    console.log("App now running on port", port);
-});
+    //因為 express 預設走 port 3000，而 heroku 上預設卻不是，要透過下列程式轉換
+    var server = app.listen(process.env.PORT || 8080, function() {
+        var port = server.address().port;
+        console.log("App now running on port", port);
+    });
