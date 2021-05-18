@@ -43,8 +43,8 @@ bot.on('message', function(event) {
 
         if (msg.search('祖先') != -1) {
             var mymsg = {
-                'type': 'image',
-                'originalContentUrl': 'https://i.imgur.com/C0gOn9V.jpg',
+                type: 'image',
+                originalContentUrl: 'https://i.imgur.com/C0gOn9V.jpg',
             }
             event.reply(mymsg);
         }
