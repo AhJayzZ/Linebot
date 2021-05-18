@@ -50,7 +50,7 @@ bot.on('message', function(event) {
         else if (msg.search('祖先') != -1) {
             mymsg = {
                 type: 'image',
-                //originalContentUrl: 'https://i.imgur.com/C0gOn9V.jpg',
+                originalContentUrl: 'https://i.imgur.com/C0gOn9V.jpg',
                 previewImageUrl: "https://i.imgur.com/C0gOn9V.jpg",
             }
             event.reply(mymsg);
