@@ -14,16 +14,16 @@ var bot = linebot({
 var name = ['張上為', '林明輝', '莊家豪', '陳鴻宇', '張庭偉', '喇賽', '曾國佑', '翁廷翰', '姚勝文', '陳孟謙', '辛世文'];
 
 bot.on('message', function(event) {
-    //把收到訊息的 event 印出來看看
+    // Log the event
     console.log(event);
 
     // Reply the same message 
-    if (event.message.type = 'text' & event.message.text != null) {
+    if (event.message.type = 'text') {
         var msg = event.message.text;
+        console.log(msg);
 
+        if (msg.search('王勁杰') != -1) { event.reply('王勁杰是我老大，他已經醒了!'); break; }
         for (i = 0; i < name.length; i++) {
-            if (msg.search('王勁杰') != -1) { event.reply('王勁杰是我老大，他已經醒了!'); break; }
-
             if (msg.search(name[i]) != -1) {
                 event.reply(name[i] + '我幹你娘啦');
                 break;
@@ -37,7 +37,6 @@ bot.on('message', function(event) {
             event.reply('你全家才可憐')
 
 
-        console.log(msg);
     }
 
 
