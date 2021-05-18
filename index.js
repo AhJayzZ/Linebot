@@ -85,10 +85,11 @@ function drawcard(msg) {
             //console.log('body:', body); // Print the HTML for the Google homepage.
 
             const parser = new DOMParser();
+            // var htmlDoc = parser.parseFromString(body, 'text/html');
+            // var random_index = Math.floor(Math.random() * 20);
+            // var image_class_name = htmlDoc.getElementsByClassName('sensitive-content')[random_index].innerHTML
             var htmlDoc = parser.parseFromString(body, 'text/html');
-            var random_index = Math.floor(Math.random() * 20);
-            //var image_class_name = htmlDoc.getElementsByClassName('sensitive-content')[random_index].innerHTML
-            var image_class_name = htmlDoc.getElementsByTagName('img')[ranmdom_num].innerHTML;
+            var image_class_name = htmlDoc.getElementsByClassName('img-fluid lazy')[ranmdom_num].outerHTML
             console.log('image class name:', image_class_name);
 
         });
