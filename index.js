@@ -1,6 +1,6 @@
 const linebot = require('linebot')
 const express = require('express')
-const request = require('request')
+const Request = require('request')
 const DOMParser = require('dom-parser')
 
 
