@@ -23,12 +23,10 @@ bot.on('message', function(event) {
     // Reply the same message 
     if (event.message.type = 'text') {
         var msg = event.message.text;
-        console.log(msg);
+        console.log('Recevied:', msg);
 
         //drawcard(msg);
 
-        //if (msg.search('王勁杰') != -1)
-        //event.reply('王勁杰是我老大');
 
         for (i = 0; i < name.length; i++) {
             if (msg.search(name[i]) != -1) {
@@ -44,11 +42,11 @@ bot.on('message', function(event) {
             event.reply('你全家才可憐')
 
         if (msg.search('祖先') != -1)
-            var message = {
+            var message = [{
                 'type': 'image',
-                'originalContentUrl': 'https://i.imgur.com/C0gOn9V.jpg'
-            }
-        event.reply(message)
+                'originalContentUrl': 'https://i.imgur.com/C0gOn9V.jpg',
+            }]
+        event.reply(message);
     }
 
 
