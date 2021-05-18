@@ -47,9 +47,8 @@ bot.on('message', function(event) {
                 //originalContentUrl: 'https://i.imgur.com/C0gOn9V.jpg',
                 previewImageUrl: "https://i.imgur.com/C0gOn9V.jpg",
             }
-            event.reply('這是我的祖先')
-            await (200)
-            event.reply(mymsg)
+            event.reply('這是我的祖先');
+            setTimeout(() => { event.reply(mymsg); }, 2000);
 
         }
     }
