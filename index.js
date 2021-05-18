@@ -38,22 +38,20 @@ bot.on('message', function(event) {
         if (msg == '!抽' || msg == '!抽卡')
             event.reply('抽殺小啦，還不會啦');
 
-        if (msg.search('可憐') != -1)
-            event.reply('你全家才可憐')
+        else if (msg.search('可憐') != -1)
+            event.reply('你全家才可憐');
 
-        if (msg.search('祖先') != -1) {
+        else if (msg.search('祖先') != -1) {
             mymsg = {
                 type: 'image',
                 //originalContentUrl: 'https://i.imgur.com/C0gOn9V.jpg',
                 previewImageUrl: "https://i.imgur.com/C0gOn9V.jpg",
             }
-            event.reply(mymsg)
-        }
+            event.reply(mymsg);
+        } else if (msg.search('QQ') != -1)
+            event.reply('Q你媽逼');
 
-        if (msg.search('QQ') != -1)
-            event.reply('Q你媽逼')
-
-        if (msg.search('!') != -1)
+        else if (msg.search('!') != -1)
             event.reply('我看不懂啦QQ')
     }
 
