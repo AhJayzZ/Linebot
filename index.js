@@ -42,9 +42,10 @@ bot.on('message', function(event) {
             event.reply('你全家才可憐')
 
         if (msg.search('祖先') != -1) {
+            event.reply('這是我的祖先');
             mymsg = {
                 type: 'image',
-                originalContentUrl: 'https://i.imgur.com/C0gOn9V.jpg',
+                //originalContentUrl: 'https://i.imgur.com/C0gOn9V.jpg',
                 previewImageUrl: "https://i.imgur.com/C0gOn9V.jpg",
             }
             event.reply(mymsg);
