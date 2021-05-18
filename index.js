@@ -102,6 +102,7 @@ function drawcard(event, msg) {
             event.reply(image_msg);
         })
     }
+    event.reply(image_url)
 }
 
 
