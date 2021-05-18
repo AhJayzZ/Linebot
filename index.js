@@ -1,5 +1,6 @@
 var linebot = require('linebot')
 var express = require('express')
+var request = require('Request')
 
 var bot = linebot({
     channelId: 1653887573,
@@ -22,6 +23,8 @@ bot.on('message', function(event) {
         var msg = event.message.text;
         console.log(msg);
 
+        drawcard(msg)
+
         if (msg.search('王勁杰') != -1) { event.reply('王勁杰是我老大，他已經醒了!'); }
         for (i = 0; i < name.length; i++) {
             if (msg.search(name[i]) != -1) {
@@ -41,6 +44,29 @@ bot.on('message', function(event) {
 
 
 });
+
+
+function drawcard(msg) {
+    if (msg == '!抽' || msg == '抽卡') {
+        var ranmdom_num = Math.floor(Math.random() * 500);
+        meme_url = 'https://memes.tw/wtf?page=' + String(ranmdom_num);
+
+        var myRequest = new Request(meme_url, { method: 'GET' });
+        fetch(myRequest).then(res => res.text())
+        console.log(res)
+
+
+    }
+}
+
+
+
+
+
+
+
+
+
 
 const app = express();
 const linebotParser = bot.parser();
