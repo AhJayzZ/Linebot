@@ -73,13 +73,13 @@ function drawcard(msg) {
         meme_url = 'https://memes.tw/wtf?page=' + String(ranmdom_num);
         console.log('memeUrl:', meme_url);
 
-        request(meme_url, function(error, response, body) {
+        res = request(meme_url, function(error, response, body) {
             console.error('error:', error); // Print the error if one occurred
             console.log('statusCode:', response & response.statusCode); // Print the response status code if a response was received
             //console.log('body:', body); // Print the HTML for the Google homepage.
 
             const parser = new DOMParser();
-            var htmlDoc = parser.parseFromString(body, 'text/html');
+            var htmlDoc = parser.parseFromString(res.text, 'text/html');
             image_class_name = htmlDoc.getElementsByClassName('sensitive-content')
             console.log(image_class_name)
         });
