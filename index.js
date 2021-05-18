@@ -75,14 +75,12 @@ function drawcard(event, msg) {
         meme_url = 'https://memes.tw/wtf?page=' + String(ranmdom_num);
         console.log('memeUrl:', meme_url);
 
-
         myoption = {
             method: 'GET',
             headers: {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36',
             }
         }
-
 
         request(meme_url, myoption, function(error, response, body) {
             console.error('error:', error); // Print the error if one occurred
@@ -97,11 +95,11 @@ function drawcard(event, msg) {
 
             image_msg = {
                 type: 'image',
-                //originalContentUrl: image_url,
+                originalContentUrl: image_url,
                 previewImageUrl: image_url,
             }
 
-            event.reply(image_msg)
+            event.reply(image_msg);
         })
     }
 }
