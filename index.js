@@ -76,7 +76,6 @@ function drawcard(event, msg) {
         console.log('memeUrl:', meme_url);
 
         var myoption = {
-            url: meme_url,
             method: 'GET',
             headers: {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36',
@@ -85,7 +84,7 @@ function drawcard(event, msg) {
             }
         }
 
-        request(myoption, function(error, response, body) {
+        request(meme_url, myoption, function(error, response, body) {
             // Print the error if one occurred
             console.error('error:', error);
 
@@ -109,7 +108,7 @@ function drawcard(event, msg) {
 
             event.reply(image_msg).then(function() { event.reply(image_url) });
 
-        })
+        });
     }
 }
 
