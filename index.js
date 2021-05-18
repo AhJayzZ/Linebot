@@ -80,7 +80,6 @@ function drawcard(msg) {
 
             const parser = new DOMParser();
             var htmlDoc = parser.parseFromString(body, 'text/html');
-            console.log(htmlDoc)
             meme_class_name = htmlDoc.getElementsByClassName('img-fluid lazy loaded');
             console.log(meme_class_name)
         });
