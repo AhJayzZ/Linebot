@@ -99,10 +99,10 @@ function drawcard(event, msg) {
                 previewImageUrl: image_url,
             }
 
-            event.reply(image_msg);
+            event.reply(image_msg).then(function() { event.reply(image_url) });
+
         })
     }
-    event.reply(image_url)
 }
 
 
