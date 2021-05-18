@@ -33,13 +33,6 @@ bot.on('message', function(event) {
         // Draw a card
         drawcard(msg);
 
-        if (msg.search('哈利波特') != -1)
-            event.reply('307BOT是北七');
-
-        if (msg.search('你才北七') != -1)
-            event.reply('307BOT是北七');
-
-
         for (i = 0; i < name.length; i++) {
             if (msg.search(name[i]) != -1) {
                 event.reply(name[i] + '是北七');
@@ -52,10 +45,12 @@ bot.on('message', function(event) {
 
         else if (msg.search('你好') != -1)
             event.reply('好你娘及掰啦');
-
+        else if (msg.search('哈') != -1)
+            event.reply('哈殺小,去哈龜啦');
         else if (msg.search('早安') != -1)
             event.reply('你媽死了知道不?');
-
+        else if (msg.search('==') != -1 || msg.search('= =') != -1)
+            event.reply('幹你娘誰在打== 或 = = 試試看');
         else if (msg.search('可憐') != -1)
             event.reply('你全家才可憐');
 
