@@ -50,12 +50,19 @@ function drawcard(msg) {
     if (msg == '!抽' || msg == '抽卡') {
         var ranmdom_num = Math.floor(Math.random() * 500);
         meme_url = 'https://memes.tw/wtf?page=' + String(ranmdom_num);
+        console.log('memeUrl:', meme_url);
 
         request(meme_url, function(error, response, body) {
             console.error('error:', error); // Print the error if one occurred
             console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
             console.log('body:', body); // Print the HTML for the Google homepage.
+
+            var doc = new DOMParser().parseFromString(body, "text/html");
+            meme_pic_classname = doc.getElementsByClassName('img-fluid lazy loaded');
+            console.log(doc);
+            console.log(meme_pic_classname)
         });
+
 
     }
 }
