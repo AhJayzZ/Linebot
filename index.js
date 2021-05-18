@@ -1,6 +1,5 @@
 var linebot = require('linebot')
 var express = require('express')
-var Request = require('request')
 
 var bot = linebot({
     channelId: 1653887573,
@@ -51,10 +50,11 @@ function drawcard(msg) {
         var ranmdom_num = Math.floor(Math.random() * 500);
         meme_url = 'https://memes.tw/wtf?page=' + String(ranmdom_num);
 
-        var myRequest = new Request(meme_url, { method: 'GET' });
-        fetch(myRequest).then(res => res.text())
-        console.log(res)
-
+        request(meme_url, function(error, response, body) {
+            console.error('error:', error); // Print the error if one occurred
+            console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+            console.log('body:', body); // Print the HTML for the Google homepage.
+        });
 
     }
 }
