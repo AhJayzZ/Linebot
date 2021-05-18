@@ -81,10 +81,8 @@ function drawcard(msg) {
             const parser = new DOMParser();
             var htmlDoc = parser.parseFromString(body, 'text/html');
             var random_index = Math.floor(Math.random() * 20);
-            var image_class_name = htmlDoc.getElementsByClassName('sensitive-content')[random_index].innerHTML;
-            var url_index = image_class_name.indexOf('src');
-            var image_url = image_class_name.slice(url_index + 3, url_index + 47);
-            console.log('image class name:', image_url);
+            var image_class_name = htmlDoc.getElementsByClassName('sensitive-content')[random_index]
+            console.log('image class name:', image_class_name);
 
         });
 
