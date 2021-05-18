@@ -27,7 +27,8 @@ bot.on('message', function(event) {
 
         //drawcard(msg);
 
-        if (msg.search('王勁杰') != -1) { event.reply('王勁杰是我老大'); }
+        if (msg.search('王勁杰') != -1)
+            event.reply('王勁杰是我老大');
         for (i = 0; i < name.length; i++) {
             if (msg.search(name[i]) != -1) {
                 event.reply(name[i] + '我幹你娘啦');
