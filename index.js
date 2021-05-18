@@ -2,7 +2,6 @@ const linebot = require('linebot')
 const express = require('express')
 const request = require('request')
 const DOMParser = require('dom-parser')
-const { Parser } = require('htmlparser2')
 
 
 var bot = linebot({
@@ -76,10 +75,18 @@ function drawcard(event, msg) {
         meme_url = 'https://memes.tw/wtf?page=' + String(ranmdom_num);
         console.log('memeUrl:', meme_url);
 
-        request(meme_url, function(error, response, body) {
+
+
+        var myrequest = new Request()
+        myrequest.method = 'GET'
+        myrequest.headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36',
+        }
+
+        myrequest(meme_url, function(error, response, body) {
             console.error('error:', error); // Print the error if one occurred
             console.log('statusCode:', response & response.statusCode); // Print the response status code if a response was received
-            //console.log('body:', body); // Print the HTML for the Google homepage.
+            //console.log('body:', body);                               // Print the HTML for the Google homepage.
 
             const parser = new DOMParser();
             var random_index = Math.floor(Math.random() * 20);
