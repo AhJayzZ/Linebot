@@ -14,7 +14,7 @@ var bot = linebot({
 //-------------------------------------------------------------------------
 
 
-var name = ['張上為', '林明輝', '莊家豪', '陳鴻宇', '張庭偉', '喇賽', '曾國佑', '翁廷翰', '姚勝文', '陳孟謙', '辛世文'];
+var name = ['張上為', '林明輝', '莊家豪', '陳鴻宇', '張庭偉', '喇賽', '曾國佑', '翁廷翰', '姚勝文', '陳孟謙', '辛世文', '碰'];
 
 bot.on('message', function(event) {
     // Log the event
@@ -25,9 +25,9 @@ bot.on('message', function(event) {
         var msg = event.message.text;
         console.log(msg);
 
-        drawcard(msg)
+        //drawcard(msg);
 
-        if (msg.search('王勁杰') != -1) { event.reply('王勁杰是我老大，他已經醒了!'); }
+        if (msg.search('王勁杰') != -1) { event.reply('王勁杰是我老大'); }
         for (i = 0; i < name.length; i++) {
             if (msg.search(name[i]) != -1) {
                 event.reply(name[i] + '我幹你娘啦');
@@ -57,7 +57,7 @@ function drawcard(msg) {
         request(meme_url, function(error, response, body) {
             console.error('error:', error); // Print the error if one occurred
             console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-            console.log('body:', body); // Print the HTML for the Google homepage.
+            //console.log('body:', body); // Print the HTML for the Google homepage.
 
             const parser = new DOMParser();
             var htmlDoc = parser.parseFromString(body, 'text/html');
