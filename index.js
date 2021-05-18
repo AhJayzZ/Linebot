@@ -75,12 +75,13 @@ function drawcard(msg) {
 
         request(meme_url, function(error, response, body) {
             console.error('error:', error); // Print the error if one occurred
-            console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+            console.log('statusCode:', response, response.statusCode); // Print the response status code if a response was received
             //console.log('body:', body); // Print the HTML for the Google homepage.
 
             const parser = new DOMParser();
             var htmlDoc = parser.parseFromString(body, 'text/html');
-            meme_class_name = htmlDoc.getElementsByClassName('img-fluid lazy');
+            console.log(htmlDoc)
+            meme_class_name = htmlDoc.getElementsByClassName('img-fluid lazy loaded');
             console.log(meme_class_name)
         });
 
