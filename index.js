@@ -30,13 +30,13 @@ bot.on('message', function(event) {
 
         for (i = 0; i < name.length; i++) {
             if (msg.search(name[i]) != -1) {
-                event.reply(name[i] + '我幹你娘啦');
+                event.reply(name[i] + '是北七');
                 break;
             }
         }
 
         if (msg == '!抽' || msg == '!抽卡')
-            event.reply('抽殺小啦，我還在學習抽卡啦');
+            event.reply('抽殺小啦，還不會啦');
 
         if (msg.search('可憐') != -1)
             event.reply('你全家才可憐')
@@ -47,10 +47,14 @@ bot.on('message', function(event) {
                 //originalContentUrl: 'https://i.imgur.com/C0gOn9V.jpg',
                 previewImageUrl: "https://i.imgur.com/C0gOn9V.jpg",
             }
-            event.reply('這是我的祖先');
-            setTimeout(() => { event.reply(mymsg); }, 2000);
-
+            event.reply(mymsg)
         }
+
+        if (msg.search('QQ') != -1)
+            event.reply('Q你媽逼')
+
+        if (msg.search('!') != -1)
+            event.reply('我看不懂啦QQ')
     }
 
 
