@@ -1,6 +1,8 @@
-var linebot = require('linebot')
-var express = require('express')
-var request = require('request')
+const linebot = require('linebot')
+const express = require('express')
+const request = require('request')
+const DOMParser = require('dom-parser')
+
 
 var bot = linebot({
     channelId: 1653887573,
@@ -57,10 +59,10 @@ function drawcard(msg) {
             console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
             console.log('body:', body); // Print the HTML for the Google homepage.
 
-            var doc = new DOMParser().parseFromString(body, "text/html");
-            meme_pic_classname = doc.getElementsByClassName('img-fluid lazy loaded');
-            console.log(doc);
-            console.log(meme_pic_classname)
+            const parser = new DOMParser();
+            var htmlDoc = parser.parseFromString(body, 'text/html');
+            meme_class_name = htmlDoc.getElementsByClassName('img-fluid lazy loaded');
+            console.log(meme_class_name)
         });
 
 

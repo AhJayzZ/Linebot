@@ -9,7 +9,10 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "dom-parser": "^0.1.6",
         "express": "^4.17.1",
+        "htmlparser2": "^6.1.0",
+        "jsdom": "^16.5.3",
         "linebot": "^1.6.1",
         "request": "^2.88.2"
     }
