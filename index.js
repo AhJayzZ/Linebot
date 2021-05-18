@@ -71,7 +71,7 @@ bot.on('message', function(event) {
 
 function drawcard(event, msg) {
     if (msg.search('抽') != -1) {
-        var ranmdom_num = Math.floor(Math.random() * 300);
+        var ranmdom_num = Math.floor(Math.random() * 500);
         meme_url = 'https://memes.tw/wtf?page=' + String(ranmdom_num);
         console.log('memeUrl:', meme_url);
 
@@ -81,6 +81,7 @@ function drawcard(event, msg) {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36',
                 //'Host': 'memeprod.sgp1.digitaloceanspaces.com',
                 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+                'Cache-Control': 'max-age=0',
             }
         }
 
@@ -95,7 +96,7 @@ function drawcard(event, msg) {
             //console.log('body:', body);                           
 
             const parser = new DOMParser();
-            var random_index = Math.floor(Math.random() * 10);
+            var random_index = Math.floor(Math.random() * 20);
             var htmlDoc = parser.parseFromString(body, 'text/html');
             var image_url = htmlDoc.getElementsByClassName('img-fluid lazy')[random_index].getAttribute('data-src')
             console.log('image_url:', image_url)
