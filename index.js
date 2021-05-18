@@ -80,8 +80,10 @@ function drawcard(msg) {
 
             const parser = new DOMParser();
             var htmlDoc = parser.parseFromString(body, 'text/html');
-            meme_class_name = htmlDoc.getElementsByClassName('img-fluid lazy');
-            console.log(meme_class_name)
+            image_class_name = htmlDoc.getElementsByClassName('img-fluid lazy');
+            console.log(image_class_name)
+            image_url = image_class_name.getAttribute('data-src')
+            console.log(image_url)
         });
 
 
