@@ -85,6 +85,7 @@ function drawcard(event, msg) {
             var random_index = Math.floor(Math.random() * 20);
             var htmlDoc = parser.parseFromString(body, 'text/html');
             var image_url = htmlDoc.getElementsByClassName('img-fluid lazy')[random_index].getAttribute('data-src')
+            console.log('image_url:', image_url)
 
             image_msg = {
                 type: 'image',
@@ -93,7 +94,6 @@ function drawcard(event, msg) {
             }
             event.reply(image_msg)
         });
-
 
     }
 }
