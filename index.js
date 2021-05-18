@@ -98,7 +98,7 @@ function drawcard(event, msg) {
             image_msg = {
                 type: 'image',
                 originalContentUrl: image_url,
-                previewImageUrl: image_url,
+                //previewImageUrl: image_url,
             }
 
             event.reply(image_msg)
