@@ -40,7 +40,7 @@ bot.on('message', function(event) {
             }
         }
 
-        if (msg == '!抽' || msg == '!抽卡')
+        if (msg.search('抽') != -1)
             event.reply('抽殺小啦，還不會啦');
 
         else if (msg.search('你好') != -1)
@@ -50,7 +50,7 @@ bot.on('message', function(event) {
         else if (msg.search('早安') != -1)
             event.reply('你媽死了知道不?');
         else if (msg.search('==') != -1 || msg.search('= =') != -1)
-            event.reply('幹你娘誰再打== 或 = =，我就打誰');
+            event.reply('耖你媽看到==就不爽，害我被罵，幹你娘出來輸贏啦');
         else if (msg.search('可憐') != -1)
             event.reply('你全家才可憐');
 
