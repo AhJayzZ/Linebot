@@ -80,7 +80,7 @@ function drawcard(msg) {
 
             const parser = new DOMParser();
             var htmlDoc = parser.parseFromString(body, 'text/html');
-            image_class_name = htmlDoc.getElementsByClassName('123132132')
+            image_class_name = htmlDoc.getElementsByClassName('img-fluid lazy')
             console.log(image_class_name)
         });
 
