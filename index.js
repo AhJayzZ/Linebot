@@ -76,14 +76,17 @@ function drawcard(event, msg) {
         console.log('memeUrl:', meme_url);
 
 
-
-        var myrequest = new Request()
-        myrequest.method = 'GET'
-        myrequest.headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36',
+        myoption = {
+            method: 'GET',
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36',
+            }
         }
 
-        myrequest(meme_url, function(error, response, body) {
+
+        var myrequest = new Request(meme_url, myoption)
+
+        myrequest(function(error, response, body) {
             console.error('error:', error); // Print the error if one occurred
             console.log('statusCode:', response & response.statusCode); // Print the response status code if a response was received
             //console.log('body:', body);                               // Print the HTML for the Google homepage.
