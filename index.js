@@ -79,7 +79,7 @@ function drawcard(msg) {
             //console.log('body:', body); // Print the HTML for the Google homepage.
 
             const parser = new DOMParser();
-            var htmlDoc = parser.parseFromString(res.text, 'text/xml');
+            var htmlDoc = parser.parseFromString(body, 'text/xml');
             image_class_name = htmlDoc.getElementsByClassName('sensitive-content')
             console.log(image_class_name)
         });
