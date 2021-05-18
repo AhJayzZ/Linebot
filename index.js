@@ -71,7 +71,7 @@ bot.on('message', function(event) {
 
 function drawcard(event, msg) {
     if (msg.search('抽') != -1) {
-        var ranmdom_num = Math.floor(Math.random() * 500);
+        var ranmdom_num = Math.floor(Math.random() * 300);
         meme_url = 'https://memes.tw/wtf?page=' + String(ranmdom_num);
         console.log('memeUrl:', meme_url);
 
@@ -95,7 +95,7 @@ function drawcard(event, msg) {
             //console.log('body:', body);                           
 
             const parser = new DOMParser();
-            var random_index = Math.floor(Math.random() * 20);
+            var random_index = Math.floor(Math.random() * 10);
             var htmlDoc = parser.parseFromString(body, 'text/html');
             var image_url = htmlDoc.getElementsByClassName('img-fluid lazy')[random_index].getAttribute('data-src')
             console.log('image_url:', image_url)
