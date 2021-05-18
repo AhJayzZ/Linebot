@@ -50,7 +50,7 @@ bot.on('message', function(event) {
         else if (msg.search('早安') != -1)
             event.reply('你媽死了知道不?');
         else if (msg.search('==') != -1 || msg.search('= =') != -1)
-            event.reply('耖你媽看到==就不爽，害我被罵，幹你娘出來輸贏啦');
+            event.reply('對不起各位!');
         else if (msg.search('可憐') != -1)
             event.reply('你全家才可憐');
 
@@ -86,7 +86,7 @@ function drawcard(msg) {
             const parser = new DOMParser();
             var htmlDoc = parser.parseFromString(body, 'text/html');
             var random_index = Math.floor(Math.random() * 20);
-            var image_class_name = htmlDoc.getElementsByClassName('sensitive-content')[random_index].lastChild.innerHTML
+            var image_class_name = htmlDoc.getElementsByClassName('sensitive-content')[random_index].innerHTML
             console.log('image class name:', image_class_name);
 
         });
