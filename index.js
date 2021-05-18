@@ -101,7 +101,8 @@ function drawcard(event, msg) {
             const parser = new DOMParser();
             var random_index = Math.floor(Math.random() * 20);
             var htmlDoc = parser.parseFromString(body, 'text/html');
-            var image_url = htmlDoc.getElementsByClassName('img-fluid lazy')[random_index].getAttribute('data-src')
+            var image_class_name = htmlDoc.getElementsByClassName('img-fluid lazy')[random_index]
+            var image_url = image_class_name.getAttribute('data-src')
             console.log('image_url:', image_url)
 
             image_msg = {
