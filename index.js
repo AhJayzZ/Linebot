@@ -14,12 +14,16 @@ var bot = linebot({
 //-------------------------------------------------------------------------
 
 
-var name = ['王勁杰', '張上為', '林明輝', '莊家豪', '陳鴻宇', '張庭偉', '喇賽', '曾國佑', '翁廷翰', '姚勝文', '陳孟謙', '辛世文', '碰光軍光軍碰', 'Hao', '國佑'];
+var name = ['王勁杰', '張上為', '林明輝', '莊家豪', '陳鴻宇', '張庭偉', '喇賽', '曾國祐', '翁廷翰', '姚勝文', '陳孟謙', '辛世文', '碰光軍光軍碰', 'Hao', '國祐'];
 var dictionary = ['你媽死了', '幹你媽閉嘴', '耖及掰啦', '蔡英文執政的下場', '低能兒']
+var key = '哈利波特';
+
+
 
 bot.on('message', function(event) {
     // Log the event
     console.log(event);
+
 
     // Reply the same message 
     if (event.message.type = 'text') {
@@ -28,6 +32,12 @@ bot.on('message', function(event) {
 
         // Draw a card
         drawcard(msg);
+
+        if (msg.search('哈利波特') != -1)
+            event.reply('307BOT是北七');
+
+        if (msg.search('你才北七') != -1)
+            event.reply('307BOT是北七');
 
 
         for (i = 0; i < name.length; i++) {
