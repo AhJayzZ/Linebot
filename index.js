@@ -14,7 +14,7 @@ var bot = linebot({
 //-------------------------------------------------------------------------
 
 
-var name = ['王勁杰', '張上為', '林明輝', '莊家豪', '陳鴻宇', '張庭偉', '喇賽', '曾國祐', '翁廷翰', '姚勝文', '陳孟謙', '辛世文', '碰光軍光軍碰', 'Hao', '國祐'];
+var name = [, '張上為', '林明輝', '莊家豪', '陳鴻宇', '張庭偉', '喇賽', '曾國祐', '翁廷翰', '姚勝文', '陳孟謙', '辛世文', '碰光軍光軍碰', 'Hao', '國祐'];
 var dictionary = ['你媽死了', '幹你媽閉嘴', '耖及掰啦', '蔡英文執政的下場', '低能兒']
 var key = '哈利波特';
 
@@ -32,6 +32,10 @@ bot.on('message', function(event) {
 
         // Draw a card
         drawcard(event, msg);
+
+        //Sleeping
+        if (msg.search("王勁杰") != -1)
+            event.reply('老大在睡覺，不要吵')
 
         for (i = 0; i < name.length; i++) {
             if (msg.search(name[i]) != -1) {
@@ -89,6 +93,7 @@ function drawcard(event, msg) {
                 'Sec-Fetch-Mode': 'navigate',
                 'Sec-Fetch-Site': 'none',
                 'Sec-Fetch-User': '?1',
+
             }
         }
 
