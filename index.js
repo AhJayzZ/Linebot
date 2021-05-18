@@ -38,6 +38,9 @@ bot.on('message', function(event) {
         if (msg == '!抽' || msg == '!抽卡')
             event.reply('抽殺小啦，還不會啦');
 
+        else if (msg.search('你好') != -1)
+            event.reply('好你娘及掰啦');
+
         else if (msg.search('可憐') != -1)
             event.reply('你全家才可憐');
 
