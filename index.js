@@ -32,19 +32,16 @@ bot.on('message', function(event) {
         console.log('Recevied:', msg);
 
         // Draw a card
-        drawcard(msg);
+        drawcard(event, msg);
 
         for (i = 0; i < name.length; i++) {
             if (msg.search(name[i]) != -1) {
-                event.reply(name[i] + '是啟智兒');
+                event.reply(name[i] + '是喜憨兒');
                 break;
             }
         }
 
-        if (msg.search('抽') != -1)
-            event.reply('抽殺小啦，還不會啦');
-
-        else if (msg.search('你好') != -1)
+        if (msg.search('你好') != -1)
             event.reply('好你娘及掰啦');
         else if (msg.search('哈') != -1)
             event.reply('哈殺小,去哈龜啦');
@@ -73,7 +70,7 @@ bot.on('message', function(event) {
 });
 
 
-function drawcard(msg) {
+function drawcard(event, msg) {
     if (msg.search('抽') != -1) {
         var ranmdom_num = Math.floor(Math.random() * 500);
         meme_url = 'https://memes.tw/wtf?page=' + String(ranmdom_num);
@@ -87,9 +84,14 @@ function drawcard(msg) {
             const parser = new DOMParser();
             var random_index = Math.floor(Math.random() * 20);
             var htmlDoc = parser.parseFromString(body, 'text/html');
-            var image_class_name = htmlDoc.getElementsByClassName('img-fluid lazy')[random_index].getAttribute('data-src')
-            console.log('image class name:', image_class_name);
+            var image_url = htmlDoc.getElementsByClassName('img-fluid lazy')[random_index].getAttribute('data-src')
 
+            image_msg = {
+                type: 'image',
+                originalContentUrl: image_url,
+                previewImageUrl: image_url,
+            }
+            event.reply(image_msg)
         });
 
 
