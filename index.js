@@ -41,6 +41,9 @@ bot.on('message', function(event) {
         else if (msg.search('你好') != -1)
             event.reply('好你娘及掰啦');
 
+        else if (msg.search('早安') != -1)
+            event.reply('你媽死了知道不?');
+
         else if (msg.search('可憐') != -1)
             event.reply('你全家才可憐');
 
