@@ -44,10 +44,12 @@ bot.on('message', function(event) {
         if (msg.search('祖先') != -1) {
             mymsg = {
                 type: 'image',
-                originalContentUrl: 'https://i.imgur.com/C0gOn9V.jpg',
+                //originalContentUrl: 'https://i.imgur.com/C0gOn9V.jpg',
                 previewImageUrl: "https://i.imgur.com/C0gOn9V.jpg",
             }
-            event.reply('這是我的祖先').then(event.reply(mymsg));
+            event.reply('這是我的祖先')
+            await (200)
+            event.reply(mymsg)
 
         }
     }
