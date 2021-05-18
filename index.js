@@ -75,7 +75,8 @@ function drawcard(event, msg) {
         meme_url = 'https://memes.tw/wtf?page=' + String(ranmdom_num);
         console.log('memeUrl:', meme_url);
 
-        myoption = {
+        var myoption = {
+            url: meme_url,
             method: 'GET',
             headers: {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36',
@@ -84,11 +85,15 @@ function drawcard(event, msg) {
             }
         }
 
+        request(myoption, function(error, response, body) {
+            // Print the error if one occurred
+            console.error('error:', error);
 
-        request(meme_url, myoption, function(error, response, body) {
-            console.error('error:', error); // Print the error if one occurred
-            //console.log('statusCode:', response & response.statusCode); // Print the response status code if a response was received
-            //console.log('body:', body);                               // Print the HTML for the Google homepage.
+            // Print the response status code if a response was received
+            console.log('statusCode:', response & response.statusCode);
+
+            // Print the HTML for the Google homepage.
+            //console.log('body:', body);                           
 
             const parser = new DOMParser();
             var random_index = Math.floor(Math.random() * 20);
@@ -101,6 +106,7 @@ function drawcard(event, msg) {
                 originalContentUrl: image_url,
                 previewImageUrl: image_url,
             }
+
             event.reply(image_msg).then(function() { event.reply(image_url) });
 
         })
