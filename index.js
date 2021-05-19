@@ -86,8 +86,8 @@ function drawcard(event) {
 
 
 function dcard_sex_draw(event) {
-    var dcard_sex_image_url = [];
-    const limit = 1;
+    var image_url_array = [];
+    const limit = 20;
     myrequest = {
         url: 'https://www.dcard.tw/service/api/v2/forums/sex/posts?limit=' + String(limit),
         method: 'GET',
@@ -102,23 +102,17 @@ function dcard_sex_draw(event) {
             return console.log('Status code:', res.statusCode);
         if (!error & res.statusCode == 200) {
             console.log('data[0]:', data[0])
-
-
             for (var x = 0; x < limit; x++) {
                 if (data[x].media.length != 0) {
                     console.log('data[x].media:', data[x].media)
                     for (var y = 0; y < data[x].media.length; y++) {
                         console.log('data[x].media[y].url:', data[x].media[y].url)
+                        image_url.push(data[x].media[y].url)
                     }
                 }
+                console.log(image_url_array);
             }
-
-            //console.log(dcard_sex_image_url);
-
         }
-
-
-
 
         // image_msg = {
         //     type: 'image',
@@ -127,7 +121,6 @@ function dcard_sex_draw(event) {
         // }
         // event.reply(image_msg)
     })
-    return dcard_sex_image_url
 
 
 }
