@@ -124,7 +124,7 @@ function drawcard(event) {
         }
     }
 
-    request(meme_url, myoption, function(error, response, body) {
+    request(meme_url, function(error, response, body) {
         // Print the error if one occurred
         console.error('error:', error);
 
