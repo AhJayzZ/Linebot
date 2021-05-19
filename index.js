@@ -101,8 +101,8 @@ function dcard_sex_draw(event) {
         if (res.statusCode != 200)
             return console.log('Status code:', res.statusCode);
         if (!error & res.statusCode == 200) {
-            console.log('data[0]', data[0])
-            console.log('data[1]', data[1])
+            console.log('data[0]:', data[0])
+            console.log('data[1]:', data[1])
 
 
             for (var k = 0; k < limit; k++) {
