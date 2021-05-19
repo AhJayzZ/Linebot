@@ -103,6 +103,7 @@ function dcard_sex_draw(event) {
             }
 
             // Randomly choose the image url and send message
+            console.log(image_url_array.length)
             var random_num = Math.floor(Math.random() * image_url_array.length);
             image_url = image_url_array[random_num];
             console.log(image_url);
