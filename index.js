@@ -40,12 +40,6 @@ bot.on('message', function(event) {
 
 
 
-
-
-
-
-
-
     }
 
 });
@@ -94,7 +88,6 @@ function dcard_sex_draw(event) {
         json: true,
     }
 
-    event.reply('收到');
     request(myrequest, (error, res, data) => {
         if (error)
             return console.log('Error:', error);
@@ -113,6 +106,7 @@ function dcard_sex_draw(event) {
             // Randomly choose the image url and send message
             var random_num = Math.floor(Math.random() * image_url_array.length);
             image_url = image_url_array[random_num];
+            console.log(image_url);
             //Release image url array
             image_url_array.length = 0;
 
@@ -121,8 +115,7 @@ function dcard_sex_draw(event) {
                 originalContentUrl: image_url,
                 previewImageUrl: image_url,
             }
-            event.reply(image_msg)
-
+            event.reply(image_msg);
         }
 
 
