@@ -87,7 +87,7 @@ function drawcard(event) {
             //'Host': 'memeprod.sgp1.digitaloceanspaces.com',
             //'Accept-Encoding': 'gzip, deflate,br',
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/jpg,image/png,image/jpeg,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
-            'Cache-Control': 'max-age=0',
+            'Cache-Control': 'max-age=5',
             'Accept-Language': 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7,zh-CN;q=0.6',
             'Connection': 'keep-alive',
             'sec-ch-ua': '"Not A;Brand";v="99", "Chromium";v="90", "Google Chrome";v="90"',
