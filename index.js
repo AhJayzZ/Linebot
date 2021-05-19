@@ -122,7 +122,7 @@ function drawcard(event) {
 function dcard_sex_draw(event) {
     const limit = 100;
     myrequest = {
-        url: 'https://www.dcard.tw/service/api/v2/forums/sex/posts?limit=' + str(limit),
+        url: 'https://www.dcard.tw/service/api/v2/forums/sex/posts?limit=' + String(limit),
         method: 'GET',
         json: true,
     }
