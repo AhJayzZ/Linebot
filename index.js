@@ -106,7 +106,13 @@ function dcard_sex_draw(event) {
 
 
             for (var k = 0; k < limit; k++) {
-
+                if (typeof(data[k].media) != null) {
+                    console.log('data[k].media:', data[k].media)
+                    for (var z = 0; z < limit; z++) {
+                        if (typeof(data[k].media[z].url) != null)
+                            console.log('data[k].media[z].url:', data[k].media[z].url)
+                    }
+                }
             }
 
             //console.log(dcard_sex_image_url);
