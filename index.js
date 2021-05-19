@@ -53,7 +53,7 @@ bot.on('message', function(event) {
             event.reply('你媽死了知道不');
         else if (parseInt(msg.search('==')) != -1 || parseInt(msg.search('= =')) != -1) {
             angry_count = angry_count + 1;
-            event.reply('誰在打==或= =試看看啦，憤怒指數:' + angry_count);
+            event.reply('誰再打==或= =試看看啦，憤怒指數:' + angry_count);
         } else if (parseInt(msg.search('可憐')) != -1)
             event.reply('你全家才可憐');
 
