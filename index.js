@@ -76,7 +76,7 @@ bot.on('message', function(event) {
 
 
 function drawcard(event) {
-    var ranmdom_num = Math.floor(Math.random() * 1000);
+    var ranmdom_num = Math.floor(Math.random() * 5000);
     meme_url = 'https://memes.tw/wtf?page=' + String(ranmdom_num);
     console.log('memeUrl:', meme_url);
 
