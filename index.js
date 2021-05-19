@@ -50,10 +50,11 @@ bot.on('message', function(event) {
         var msg = event.message.text;
         console.log('Recevied Message:', msg);
 
-        // Draw a card
+        // Draw a meme image
         if (parseInt(msg.indexOf('抽')) != -1)
             drawcard(event);
 
+        // Draw a sexy image
         if (parseInt(msg.indexOf('奶子')) != -1) {
             var random_index = Math.floor(Math.random() * 20);
             img_msg = {
@@ -106,7 +107,7 @@ function drawcard(event) {
             previewImageUrl: image_url,
         }
 
-        event.reply(image_msg).then(function() { event.reply(image_url) });
+        event.reply(image_msg);
 
     });
 }
