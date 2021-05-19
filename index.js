@@ -109,7 +109,7 @@ function dcard_sex_draw(event) {
                 if (typeof(data[k].media) != null) {
                     console.log('data[k].media:', data[k].media)
                     for (var z = 0; z < limit; z++) {
-                        if (typeof(data[k].media[z].url) != null)
+                        if (typeof(data[k].media[z]) != null)
                             console.log('data[k].media[z].url:', data[k].media[z].url)
                     }
                 }
