@@ -125,12 +125,7 @@ function dcard_sex_draw(event) {
         method: 'GET',
     }
 
-    test = {
-        type: 'image',
-        originalContentUrl: 'https://i.imgur.com/2tClM3u.jpg',
-        previewImageUrl: 'https://i.imgur.com/2tClM3u.jpg',
-    }
-    event.reply(test)
+
 
     request(myrequest, (error, res, data) => {
         if (error)
@@ -144,7 +139,18 @@ function dcard_sex_draw(event) {
 
             // )
             console.log(json_data);
+            console.log(json_data.media)
         }
+
+
+
+
+        // image_msg = {
+        //     type: 'image',
+        //     originalContentUrl: 'https://i.imgur.com/2tClM3u.jpg',
+        //     previewImageUrl: 'https://i.imgur.com/2tClM3u.jpg',
+        // }
+        // event.reply(image_msg)
     })
 
 
