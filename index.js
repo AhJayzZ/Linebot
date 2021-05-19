@@ -102,9 +102,9 @@ function dcard_sex_draw(event) {
             return console.log('Status code:', res.statusCode);
         if (!error & res.statusCode == 200) {
             for (var k = 0; k < limit; k++) {
-                if (data[k].media != '') {
-                    console.log(data[k].media[0])
-                    dcard_sex_image_url.push(data[k].media[0])
+                if (data[0].media != '') {
+                    console.log(data[0].media[k])
+                    dcard_sex_image_url.push(data[0].media[k])
                 }
             }
 
