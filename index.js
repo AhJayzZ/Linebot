@@ -61,7 +61,7 @@ bot.on('message', function(event) {
                 originalContentUrl: temp_url[random_index],
                 previewImageUrl: temp_url[random_index],
             }
-            event.reply(image_msg);
+            event.reply(img_msg);
         }
     }
     // for (i = 0; i < name.length; i++) {
