@@ -33,7 +33,7 @@ bot.on('message', function(event) {
 
         // Draw a card
         if (parseInt(msg.search('抽')) != -1)
-            drawcard(event, msg);
+            drawcard(event);
 
 
 
@@ -77,7 +77,7 @@ bot.on('message', function(event) {
 });
 
 
-function drawcard(event, msg) {
+function drawcard(event) {
     var ranmdom_num = Math.floor(Math.random() * 500);
     meme_url = 'https://memes.tw/wtf?page=' + String(ranmdom_num);
     console.log('memeUrl:', meme_url);
