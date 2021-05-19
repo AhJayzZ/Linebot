@@ -69,7 +69,7 @@ bot.on('message', function(event) {
             event.reply('Q你媽逼');
 
         else if (msg.search('!') != -1)
-            event.reply('我看不懂啦QQ')
+            event.reply('我看不懂啦QQ');
     }
 
 
