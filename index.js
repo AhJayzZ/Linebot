@@ -112,7 +112,7 @@ function dcard_sex_draw(event) {
             for (var k = 0; k < limit; k++) {
                 if (data[k].media != '') {
                     console.log(data[k].media)
-                    dcard_sex_image_url.push(data[k].media) 4
+                    dcard_sex_image_url.push(data[k].media)
                 }
             }
 
