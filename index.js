@@ -32,7 +32,7 @@ bot.on('message', function(event) {
         console.log('Recevied:', msg);
 
         // Draw a card
-        if (msg.search('抽') >= 0)
+        if (val(msg.search('抽')) != -1)
             drawcard(event, msg);
 
 
