@@ -97,7 +97,6 @@ function drawcard(event) {
             'Sec-Fetch-Site': 'none',
             'Sec-Fetch-User': '?1',
             'Upgrade-Insecure-Requests': '1',
-
         }
     }
 
