@@ -54,7 +54,7 @@ bot.on('message', function(event) {
         if (parseInt(msg.indexOf('抽')) != -1)
             drawcard(event);
 
-        if (parseInt(masg.indexOf('奶子')) != -1) {
+        if (parseInt(msg.indexOf('奶子')) != -1) {
             var random_index = Math.floor(Math.random() * 20);
             img_msg = {
                 type: 'image',
@@ -95,9 +95,6 @@ bot.on('message', function(event) {
     //         event.reply(mymsg);
     //     } else if (parseInt(msg.indexOf('QQ')) != -1)
     //         event.reply('Q你媽逼');
-
-}
-
 
 });
 
