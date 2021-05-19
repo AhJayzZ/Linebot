@@ -31,12 +31,12 @@ bot.on('message', function(event) {
         console.log('Recevied Message:', msg);
 
         // Draw a card
-        if (parseInt(msg.search('抽')) != -1)
+        if (parseInt(msg.indexOf('抽')) != -1)
             drawcard(event);
 
 
         for (i = 0; i < name.length; i++) {
-            if (parseInt(msg.search(name[i])) != -1) {
+            if (parseInt(msg.indexOf(name[i])) != -1) {
                 //Sleeping
                 // if (msg.search('王勁杰') != -1)
                 //     event.reply('老大在睡覺，不要吵')
@@ -45,29 +45,29 @@ bot.on('message', function(event) {
             }
         }
 
-        if (parseInt(msg.search('你好')) != -1)
+        if (parseInt(msg.indexOf('你好')) != -1)
             event.reply('好你娘及掰啦');
-        else if (parseInt(msg.search('哈')) != -1)
+        else if (parseInt(msg.indexOf('哈')) != -1)
             event.reply('哈殺小,去哈龜啦');
-        else if (parseInt(msg.search('你媽')) != -1)
+        else if (parseInt(msg.indexOf('你媽')) != -1)
             event.reply('你媽死了知道不');
-        else if (parseInt(msg.search('==')) != -1 || parseInt(msg.search('= =')) != -1) {
+        else if (parseInt(msg.indexOf('==')) != -1 || parseInt(msg.indexOf('= =')) != -1) {
             angry_count = angry_count + 1;
             event.reply('誰再打==或= =試看看啦，憤怒指數:' + angry_count);
-        } else if (parseInt(msg.search('可憐')) != -1)
+        } else if (parseInt(msg.indexOf('可憐')) != -1)
             event.reply('你全家才可憐');
 
-        else if (parseInt(msg.search('祖先')) != -1) {
+        else if (parseInt(msg.indexOf('祖先')) != -1) {
             mymsg = {
                 type: 'image',
                 originalContentUrl: 'https://i.imgur.com/C0gOn9V.jpg',
                 previewImageUrl: "https://i.imgur.com/C0gOn9V.jpg",
             }
             event.reply(mymsg);
-        } else if (parseInt(msg.search('QQ')) != -1)
+        } else if (parseInt(msg.indexOf('QQ')) != -1)
             event.reply('Q你媽逼');
 
-        else if (parseInt(msg.search('!')) != -1)
+        else if (parseInt(msg.indexOf('!')) != -1)
             event.reply('我看不懂啦QQ');
     }
 
