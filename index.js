@@ -102,15 +102,13 @@ function dcard_sex_draw(event) {
             return console.log('Status code:', res.statusCode);
         if (!error & res.statusCode == 200) {
             console.log('data[0]:', data[0])
-            console.log('data[1]:', data[1])
 
 
-            for (var k = 0; k < limit; k++) {
-                if (typeof(data[k].media) != undefined) {
-                    console.log('data[k].media:', data[k].media)
-                    for (var z = 0; z < limit; z++) {
-                        if (typeof(data[k].media[z]) != undefined)
-                            console.log('data[k].media[z].url:', data[k].media[z].url)
+            for (var x = 0; x < limit; x++) {
+                if (data[x].media.length != 0) {
+                    console.log('data[x].media:', data[x].media)
+                    for (var y = 0; y < data[x].media.length; y++) {
+                        console.log('data[x].media[y].url:', data[x].media[y].url)
                     }
                 }
             }
