@@ -17,10 +17,30 @@ var bot = linebot({
 
 var name = ['王勁杰', '張上為', '林明輝', '莊家豪', '陳鴻宇', '張庭偉', '喇賽', '曾國祐', '翁廷翰', '姚勝文', '陳孟謙', '辛世文', '碰光軍光軍碰', 'Hao', '國祐'];
 var dictionary = ['你媽死了', '幹你媽閉嘴', '耖及掰啦', '蔡英文執政的下場', '低能兒'];
-var key = '哈利波特';
-
+var temp_url = ['https://imgur.dcard.tw/O1hb6onb.jpg',
+    'https://imgur.dcard.tw/ek3BcUmb.jpg',
+    'https://imgur.dcard.tw/RpuS9Nwb.jpg',
+    'https://imgur.dcard.tw/hOx7oNIb.jpg',
+    'https://imgur.dcard.tw/3ZMDZYjb.jpg',
+    'https://imgur.dcard.tw/ecgTtUnb.jpg',
+    'https://imgur.dcard.tw/ba1Dgq4b.jpg',
+    'https://imgur.dcard.tw/BaGvrzHb.jpg',
+    'https://imgur.dcard.tw/4lVjASOb.jpg',
+    'https://imgur.dcard.tw/kKajTfHb.jpg',
+    'https://imgur.dcard.tw/QIbISoFb.jpg',
+    'https://imgur.dcard.tw/J3jp2wfb.jpg',
+    'https://imgur.dcard.tw/hkjSP9wb.jpg',
+    'https://imgur.dcard.tw/wzhNltrb.jpg',
+    'https://imgur.dcard.tw/KTy2NW9b.jpg',
+    'https://imgur.dcard.tw/iaXDIT7b.jpg',
+    'https://imgur.dcard.tw/e6xakwUb.jpg',
+    'https://imgur.dcard.tw/Z4xnqjBb.jpg',
+    'https://imgur.dcard.tw/Oyndfwvb.jpg',
+    'https://imgur.dcard.tw/44FFNjQb.jpg',
+];
 
 var angry_count = 0;
+
 bot.on('message', function(event) {
     // Log the event
     console.log(event);
@@ -34,42 +54,49 @@ bot.on('message', function(event) {
         if (parseInt(msg.indexOf('抽')) != -1)
             drawcard(event);
 
-
-        for (i = 0; i < name.length; i++) {
-            if (parseInt(msg.indexOf(name[i])) != -1) {
-                //Sleeping
-                // if (msg.search('王勁杰') != -1)
-                //     event.reply('老大在睡覺，不要吵')
-                event.reply(name[i] + '是喜憨兒');
-                break;
-            }
-        }
-
-        if (parseInt(msg.indexOf('你好')) != -1)
-            event.reply('好你娘及掰啦');
-        else if (parseInt(msg.indexOf('哈')) != -1)
-            event.reply('哈殺小,去哈龜啦');
-        else if (parseInt(msg.indexOf('你媽')) != -1)
-            event.reply('你媽死了知道不');
-        else if (parseInt(msg.indexOf('==')) != -1 || parseInt(msg.indexOf('= =')) != -1) {
-            angry_count = angry_count + 1;
-            event.reply('誰再打==或= =試看看啦，憤怒指數:' + angry_count);
-        } else if (parseInt(msg.indexOf('可憐')) != -1)
-            event.reply('你全家才可憐');
-
-        else if (parseInt(msg.indexOf('祖先')) != -1) {
-            mymsg = {
+        if (parseInt(masg.indexOf('奶子')) != -1) {
+            var random_index = Math.floor(Math.random() * 20);
+            img_msg = {
                 type: 'image',
-                originalContentUrl: 'https://i.imgur.com/C0gOn9V.jpg',
-                previewImageUrl: "https://i.imgur.com/C0gOn9V.jpg",
+                originalContentUrl: temp_url[random_index],
+                previewImageUrl: temp_url[random_index],
             }
-            event.reply(mymsg);
-        } else if (parseInt(msg.indexOf('QQ')) != -1)
-            event.reply('Q你媽逼');
-
-        else if (parseInt(msg.indexOf('!')) != -1)
-            event.reply('我看不懂啦QQ');
+            event.reply(image_msg);
+        }
     }
+    // for (i = 0; i < name.length; i++) {
+    //     if (parseInt(msg.indexOf(name[i])) != -1) {
+    //         Sleeping
+    //         if (msg.search('王勁杰') != -1)
+    //              event.reply('老大在睡覺，不要吵')
+    //         event.reply(name[i] + '被打了一下');
+    //         break;
+    //     }
+    // }
+
+    //     if (parseInt(msg.indexOf('你好')) != -1)
+    //         event.reply('好你娘及掰啦');
+    //     else if (parseInt(msg.indexOf('哈')) != -1)
+    //         event.reply('哈殺小,去哈龜啦');
+    //     else if (parseInt(msg.indexOf('你媽')) != -1)
+    //         event.reply('你媽死了知道不');
+    //     else if (parseInt(msg.indexOf('==')) != -1 || parseInt(msg.indexOf('= =')) != -1) {
+    //         angry_count = angry_count + 1;
+    //         event.reply('誰再打==或= =試看看啦，憤怒指數:' + angry_count);
+    //     } else if (parseInt(msg.indexOf('可憐')) != -1)
+    //         event.reply('你全家才可憐');
+
+    //     else if (parseInt(msg.indexOf('祖先')) != -1) {
+    //         mymsg = {
+    //             type: 'image',
+    //             originalContentUrl: 'https://i.imgur.com/C0gOn9V.jpg',
+    //             previewImageUrl: "https://i.imgur.com/C0gOn9V.jpg",
+    //         }
+    //         event.reply(mymsg);
+    //     } else if (parseInt(msg.indexOf('QQ')) != -1)
+    //         event.reply('Q你媽逼');
+
+}
 
 
 });
