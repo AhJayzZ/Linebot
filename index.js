@@ -18,30 +18,7 @@ var bot = linebot({
 
 var name = ['王勁杰', '張上為', '林明輝', '莊家豪', '陳鴻宇', '張庭偉', '喇賽', '曾國祐', '翁廷翰', '姚勝文', '陳孟謙', '辛世文', '碰光軍光軍碰', 'Hao', '國祐'];
 var dictionary = ['你媽死了', '幹你媽閉嘴', '耖及掰啦', '蔡英文執政的下場', '低能兒'];
-var dcard_sex_image_url = [];
-var temp_url = ['https://imgur.dcard.tw/O1hb6onb.jpg',
-    'https://imgur.dcard.tw/ek3BcUmb.jpg',
-    'https://imgur.dcard.tw/RpuS9Nwb.jpg',
-    'https://imgur.dcard.tw/hOx7oNIb.jpg',
-    'https://imgur.dcard.tw/3ZMDZYjb.jpg',
-    'https://imgur.dcard.tw/ecgTtUnb.jpg',
-    'https://imgur.dcard.tw/ba1Dgq4b.jpg',
-    'https://imgur.dcard.tw/BaGvrzHb.jpg',
-    'https://imgur.dcard.tw/4lVjASOb.jpg',
-    'https://imgur.dcard.tw/kKajTfHb.jpg',
-    'https://imgur.dcard.tw/QIbISoFb.jpg',
-    'https://imgur.dcard.tw/J3jp2wfb.jpg',
-    'https://imgur.dcard.tw/hkjSP9wb.jpg',
-    'https://imgur.dcard.tw/wzhNltrb.jpg',
-    'https://imgur.dcard.tw/KTy2NW9b.jpg',
-    'https://imgur.dcard.tw/iaXDIT7b.jpg',
-    'https://imgur.dcard.tw/e6xakwUb.jpg',
-    'https://imgur.dcard.tw/Z4xnqjBb.jpg',
-    'https://imgur.dcard.tw/Oyndfwvb.jpg',
-    'https://imgur.dcard.tw/44FFNjQb.jpg',
-];
 
-var angry_count = 0;
 
 bot.on('message', function(event) {
     // Log the event
@@ -69,9 +46,6 @@ bot.on('message', function(event) {
 
         if (parseInt(msg.indexOf('測試')) != -1)
             dcard_sex_draw(event);
-
-
-
 
 
 
@@ -120,7 +94,8 @@ function drawcard(event) {
 
 
 function dcard_sex_draw(event) {
-    const limit = 100;
+    var dcard_sex_image_url = [];
+    const limit = 10;
     myrequest = {
         url: 'https://www.dcard.tw/service/api/v2/forums/sex/posts?limit=' + String(limit),
         method: 'GET',
