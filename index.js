@@ -52,8 +52,8 @@ bot.on('message', function(event) {
 
 
 function drawcard(event) {
-    var ranmdom_num = Math.floor(Math.random() * 5000);
-    meme_url = 'https://memes.tw/wtf?page=' + String(ranmdom_num);
+    var random_num = Math.floor(Math.random() * 5000);
+    meme_url = 'https://memes.tw/wtf?page=' + String(random_num);
     console.log('memeUrl:', meme_url);
 
     request(meme_url, function(error, response, body) {
@@ -101,28 +101,32 @@ function dcard_sex_draw(event) {
         if (res.statusCode != 200)
             return console.log('Status code:', res.statusCode);
         if (!error & res.statusCode == 200) {
-            console.log('data[0]:', data[0])
+            // Collecting all image
             for (var x = 0; x < limit; x++) {
-                if (data[x].media.length != 0) {
-                    console.log('data[x].media:', data[x].media)
+                if (data[x].media.length != 0)
                     for (var y = 0; y < data[x].media.length; y++) {
-                        console.log('data[x].media[y].url:', data[x].media[y].url)
                         image_url_array.push(data[x].media[y].url)
                     }
-                }
-                console.log(image_url_array);
+
             }
+
+            // Randomly choose the image url and send message
+            var random_num = Math.floor(Math.random() * image_url_array.length);
+            image_url = image_url_array[random_num];
+            //Release image url array
+            image_url_array.length = 0;
+
+            image_msg = {
+                type: 'image',
+                originalContentUrl: image_url,
+                previewImageUrl: image_url,
+            }
+            event.reply(image_msg)
+
         }
 
-        // image_msg = {
-        //     type: 'image',
-        //     originalContentUrl: image_url,
-        //     previewImageUrl: image_url,
-        // }
-        // event.reply(image_msg)
+
     })
-
-
 }
 
 
