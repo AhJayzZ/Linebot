@@ -103,8 +103,8 @@ function dcard_sex_draw(event) {
         if (!error & res.statusCode == 200) {
             for (var k = 0; k < limit; k++) {
                 if (data[k].media != '') {
+                    console.log(data[k].media)
                     if (typeof(data[k].media[k]) != null) {
-                        console.log(data[k].media[k])
                         dcard_sex_image_url.push(data[k].media[k])
                     }
                 }
