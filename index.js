@@ -63,38 +63,17 @@ bot.on('message', function(event) {
             }
             event.reply(img_msg);
         }
+
+
+
+
+
+
+
+
+
+
     }
-    // for (i = 0; i < name.length; i++) {
-    //     if (parseInt(msg.indexOf(name[i])) != -1) {
-    //         Sleeping
-    //         if (msg.search('王勁杰') != -1)
-    //              event.reply('老大在睡覺，不要吵')
-    //         event.reply(name[i] + '被打了一下');
-    //         break;
-    //     }
-    // }
-
-    //     if (parseInt(msg.indexOf('你好')) != -1)
-    //         event.reply('好你娘及掰啦');
-    //     else if (parseInt(msg.indexOf('哈')) != -1)
-    //         event.reply('哈殺小,去哈龜啦');
-    //     else if (parseInt(msg.indexOf('你媽')) != -1)
-    //         event.reply('你媽死了知道不');
-    //     else if (parseInt(msg.indexOf('==')) != -1 || parseInt(msg.indexOf('= =')) != -1) {
-    //         angry_count = angry_count + 1;
-    //         event.reply('誰再打==或= =試看看啦，憤怒指數:' + angry_count);
-    //     } else if (parseInt(msg.indexOf('可憐')) != -1)
-    //         event.reply('你全家才可憐');
-
-    //     else if (parseInt(msg.indexOf('祖先')) != -1) {
-    //         mymsg = {
-    //             type: 'image',
-    //             originalContentUrl: 'https://i.imgur.com/C0gOn9V.jpg',
-    //             previewImageUrl: "https://i.imgur.com/C0gOn9V.jpg",
-    //         }
-    //         event.reply(mymsg);
-    //     } else if (parseInt(msg.indexOf('QQ')) != -1)
-    //         event.reply('Q你媽逼');
 
 });
 
@@ -103,26 +82,6 @@ function drawcard(event) {
     var ranmdom_num = Math.floor(Math.random() * 5000);
     meme_url = 'https://memes.tw/wtf?page=' + String(ranmdom_num);
     console.log('memeUrl:', meme_url);
-
-    var myoption = {
-        method: 'GET',
-        headers: {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36',
-            //'Host': 'memeprod.sgp1.digitaloceanspaces.com',
-            //'Accept-Encoding': 'gzip, deflate,br',
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/jpg,image/png,image/jpeg,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
-            'Cache-Control': 'max-age=0',
-            'Accept-Language': 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7,zh-CN;q=0.6',
-            'Connection': 'keep-alive',
-            'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="90", "Google Chrome";v="90"',
-            'sec-ch-ua-mobile': '?0',
-            'Sec-Fetch-Dest': 'document',
-            'Sec-Fetch-Mode': 'navigate',
-            'Sec-Fetch-Site': 'none',
-            'Sec-Fetch-User': '?1',
-            'Upgrade-Insecure-Requests': '1',
-        }
-    }
 
     request(meme_url, function(error, response, body) {
         // Print the error if one occurred
@@ -161,4 +120,4 @@ app.post('/', linebotParser);
 var server = app.listen(process.env.PORT || 8080, function() {
     var port = server.address().port;
     console.log("App now running on port", port);
-})
+});
