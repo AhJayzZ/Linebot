@@ -107,7 +107,7 @@ function dcard_sex_draw(event) {
                     console.log('data[x].media:', data[x].media)
                     for (var y = 0; y < data[x].media.length; y++) {
                         console.log('data[x].media[y].url:', data[x].media[y].url)
-                        image_url.push(data[x].media[y].url)
+                        image_url_array.push(data[x].media[y].url)
                     }
                 }
                 console.log(image_url_array);
