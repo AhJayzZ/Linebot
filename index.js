@@ -35,7 +35,6 @@ bot.on('message', function(event) {
             drawcard(event);
 
 
-
         for (i = 0; i < name.length; i++) {
             if (parseInt(msg.search(name[i])) != -1) {
                 //Sleeping
@@ -50,8 +49,8 @@ bot.on('message', function(event) {
             event.reply('好你娘及掰啦');
         else if (parseInt(msg.search('哈')) != -1)
             event.reply('哈殺小,去哈龜啦');
-        else if (parseInt(msg.search('早安')) != -1)
-            event.reply('你媽死了知道不?');
+        else if (parseInt(msg.search('你媽')) != -1)
+            event.reply('你媽死了知道不');
         else if (parseInt(msg.search('==')) != -1 || parseInt(msg.search('= =')) != -1) {
             angry_count = angry_count + 1;
             event.reply('誰在打==或= =試看看啦，憤怒指數:' + angry_count);
@@ -85,7 +84,7 @@ function drawcard(event) {
         method: 'GET',
         headers: {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36',
-            //'Host': 'memeprod.sgp1.digitaloceanspaces.com',
+            'Host': 'memeprod.sgp1.digitaloceanspaces.com',
             //'Accept-Encoding': 'gzip, deflate,br',
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
             'Cache-Control': 'max-age=0',
@@ -103,10 +102,10 @@ function drawcard(event) {
 
     request(meme_url, myoption, function(error, response, body) {
         // Print the error if one occurred
-        console.error('error:', error);
+        //console.error('error:', error);
 
         // Print the response status code if a response was received
-        console.log('statusCode:', response & response.statusCode);
+        //console.log('statusCode:', response & response.statusCode);
 
         // Print the HTML for the Google homepage.
         //console.log('body:', body);                           
