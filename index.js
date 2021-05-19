@@ -22,6 +22,7 @@ var dictionary = ['你媽死了', '幹你媽閉嘴', '耖及掰啦', '蔡英文�
 
 bot.on('message', function(event) {
     // Log the event
+
     console.log(event);
 
     // Reply the same message 
