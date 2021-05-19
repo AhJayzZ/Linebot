@@ -120,12 +120,12 @@ function drawcard(event) {
 
 function dcard_sex_draw(event) {
     event.reply('收到');
-    myresquest = {
+    myrequest = {
         url: 'https://www.dcard.tw/service/api/v2/forums/sex/posts?limit=100',
         method: 'GET',
     }
 
-    request(myresquest, (error, res, data) => {
+    request(myrequest, (error, res, data) => {
         if (error)
             return console.log('Error:', error);
         if (res.statusCode != 200)
@@ -133,7 +133,7 @@ function dcard_sex_draw(event) {
         if (!error & res.statusCode == 200) {
             console.log(data)
             let json_data = JSON.parse(data);
-            console.log(json_data.url);
+            console.log(json_data);
         }
     })
 
