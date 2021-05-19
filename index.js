@@ -103,8 +103,7 @@ function dcard_sex_draw(event) {
         if (!error & res.statusCode == 200) {
             console.log('data[0].media', data[0].media)
             console.log('data[1].media', data[1].media)
-                //console.log('data[2].media', data[2].media)
-            console.log('data[3].media', data[3].media)
+            console.log('data[2].media', data[2].media)
 
             for (var k = 0; k < limit; k++) {
 
