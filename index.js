@@ -131,6 +131,7 @@ function dcard_sex_draw(event) {
         if (res.statusCode != 200)
             return console.log('Status code:', res.statusCode);
         if (!error & res.statusCode == 200) {
+            console.log(data)
             let json_data = JSON.parse(data);
             console.log(json_data.url);
         }
