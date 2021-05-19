@@ -26,7 +26,7 @@ bot.on('message', function(event) {
     console.log(event);
 
     // Reply the same message 
-    if (event.message.type == 'text' & event.message.text.length != 0) {
+    if (event.message.type == 'text') {
         var msg = event.message.text;
         console.log('Recevied Message:', msg);
 
