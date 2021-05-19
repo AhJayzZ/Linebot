@@ -37,7 +37,7 @@ bot.on('message', function(event) {
 
 
         for (i = 0; i < name.length; i++) {
-            if (msg.search(name[i]) != -1) {
+            if (parseInt(msg.search(name[i])) != -1) {
                 //Sleeping
                 // if (msg.search('王勁杰') != -1)
                 //     event.reply('老大在睡覺，不要吵')
@@ -46,29 +46,29 @@ bot.on('message', function(event) {
             }
         }
 
-        if (msg.search('你好') != -1)
+        if (parseInt(msg.search('你好')) != -1)
             event.reply('好你娘及掰啦');
-        else if (msg.search('哈') != -1)
+        else if (parseInt(msg.search('哈')) != -1)
             event.reply('哈殺小,去哈龜啦');
-        else if (msg.search('早安') != -1)
+        else if (parseInt(msg.search('早安')) != -1)
             event.reply('你媽死了知道不?');
-        else if (msg.search('==') != -1 || msg.search('= =') != -1) {
+        else if (parseInt(msg.search('==')) != -1 || parseInt(msg.search('= =')) != -1) {
             angry_count = angry_count + 1;
             event.reply('誰在打==或= =試看看啦，憤怒指數:' + angry_count);
-        } else if (msg.search('可憐') != -1)
+        } else if (parseInt(msg.search('可憐')) != -1)
             event.reply('你全家才可憐');
 
-        else if (msg.search('祖先') != -1) {
+        else if (parseInt(msg.search('祖先')) != -1) {
             mymsg = {
                 type: 'image',
                 originalContentUrl: 'https://i.imgur.com/C0gOn9V.jpg',
                 previewImageUrl: "https://i.imgur.com/C0gOn9V.jpg",
             }
             event.reply(mymsg);
-        } else if (msg.search('QQ') != -1)
+        } else if (parseInt(msg.search('QQ')) != -1)
             event.reply('Q你媽逼');
 
-        else if (msg.search('!') != -1)
+        else if (parseInt(msg.search('!')) != -1)
             event.reply('我看不懂啦QQ');
     }
 
