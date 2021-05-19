@@ -119,11 +119,11 @@ function drawcard(event) {
 
 
 function dcard_sex_draw(event) {
-
+    event.reply('收到');
     myresquest = {
         url: 'https://www.dcard.tw/service/api/v2/forums/sex/posts?limit=100',
         method: 'GET',
-        json: True,
+        json: true,
     }
 
     request(myresquest, (error, res, data) => {
