@@ -35,18 +35,9 @@ bot.on('message', function(event) {
             drawcard(event);
 
         // Draw a sexy image
-        if (parseInt(msg.indexOf('奶子')) != -1) {
-            var random_index = Math.floor(Math.random() * 20);
-            img_msg = {
-                type: 'image',
-                originalContentUrl: temp_url[random_index],
-                previewImageUrl: temp_url[random_index],
-            }
-            event.reply(img_msg);
-        }
-
-        if (parseInt(msg.indexOf('測試')) != -1)
+        if (parseInt(msg.indexOf('奶子')) != -1)
             dcard_sex_draw(event);
+
 
 
 
