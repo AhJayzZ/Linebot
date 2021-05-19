@@ -4,6 +4,7 @@ const request = require('request')
 const DOMParser = require('dom-parser')
 
 
+
 var bot = linebot({
     channelId: 1653887573,
     channelSecret: '7e6117cb1d36b389c79a95994bb63965',
@@ -14,12 +15,12 @@ var bot = linebot({
 //-------------------------------------------------------------------------
 
 
-var name = ['張上為', '林明輝', '莊家豪', '陳鴻宇', '張庭偉', '喇賽', '曾國祐', '翁廷翰', '姚勝文', '陳孟謙', '辛世文', '碰光軍光軍碰', 'Hao', '國祐'];
+var name = ['王勁杰', '張上為', '林明輝', '莊家豪', '陳鴻宇', '張庭偉', '喇賽', '曾國祐', '翁廷翰', '姚勝文', '陳孟謙', '辛世文', '碰光軍光軍碰', 'Hao', '國祐'];
 var dictionary = ['你媽死了', '幹你媽閉嘴', '耖及掰啦', '蔡英文執政的下場', '低能兒']
 var key = '哈利波特';
 
 
-
+var angry_count = 0;
 bot.on('message', function(event) {
     // Log the event
     console.log(event);
@@ -33,8 +34,6 @@ bot.on('message', function(event) {
         // Draw a card
         if (msg.search('抽') != -1)
             drawcard(event, msg);
-
-
 
 
         for (i = 0; i < name.length; i++) {
@@ -53,9 +52,10 @@ bot.on('message', function(event) {
             event.reply('哈殺小,去哈龜啦');
         else if (msg.search('早安') != -1)
             event.reply('你媽死了知道不?');
-        else if (msg.search('==') != -1 || msg.search('= =') != -1)
-            event.reply('對不起各位!');
-        else if (msg.search('可憐') != -1)
+        else if (msg.search('==') != -1 || msg.search('= =') != -1) {
+            angry_count = angry_count + 1;
+            event.reply('誰在打==或= =試看看啦，憤怒指數:' + angry_count);
+        } else if (msg.search('可憐') != -1)
             event.reply('你全家才可憐');
 
         else if (msg.search('祖先') != -1) {
@@ -85,13 +85,14 @@ function drawcard(event, msg) {
         method: 'GET',
         headers: {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36',
-            //'Host': 'memeprod.sgp1.digitaloceanspaces.com',
+            'Host': 'memeprod.sgp1.digitaloceanspaces.com',
             //'Accept-Encoding': 'gzip, deflate,br',
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
             'Cache-Control': 'max-age=0',
             'Accept-Language': 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7,zh-CN;q=0.6',
             'Connection': 'keep-alive',
             'sec-ch-ua': '"Not A;Brand";v="99", "Chromium";v="90", "Google Chrome";v="90"',
+            'sec-ch-ua-mobile': '?0',
             'Sec-Fetch-Dest': 'document',
             'Sec-Fetch-Mode': 'navigate',
             'Sec-Fetch-Site': 'none',
