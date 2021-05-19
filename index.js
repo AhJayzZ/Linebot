@@ -84,7 +84,7 @@ function drawcard(event) {
         method: 'GET',
         headers: {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36',
-            'Host': 'memeprod.sgp1.digitaloceanspaces.com',
+            //'Host': 'memeprod.sgp1.digitaloceanspaces.com',
             //'Accept-Encoding': 'gzip, deflate,br',
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
             'Cache-Control': 'max-age=0',
@@ -102,10 +102,10 @@ function drawcard(event) {
 
     request(meme_url, myoption, function(error, response, body) {
         // Print the error if one occurred
-        //console.error('error:', error);
+        console.error('error:', error);
 
         // Print the response status code if a response was received
-        //console.log('statusCode:', response & response.statusCode);
+        console.log('statusCode:', response & response.statusCode);
 
         // Print the HTML for the Google homepage.
         //console.log('body:', body);                           
