@@ -18,6 +18,7 @@ var bot = linebot({
 
 var name = ['王勁杰', '張上為', '林明輝', '莊家豪', '陳鴻宇', '張庭偉', '喇賽', '曾國祐', '翁廷翰', '姚勝文', '陳孟謙', '辛世文', '碰光軍光軍碰', 'Hao', '國祐'];
 var dictionary = ['你媽死了', '幹你媽閉嘴', '耖及掰啦', '蔡英文執政的下場', '低能兒'];
+var dcard_sex_image_url = [];
 var temp_url = ['https://imgur.dcard.tw/O1hb6onb.jpg',
     'https://imgur.dcard.tw/ek3BcUmb.jpg',
     'https://imgur.dcard.tw/RpuS9Nwb.jpg',
@@ -135,7 +136,12 @@ function dcard_sex_draw(event) {
             return console.log('Status code:', res.statusCode);
         if (!error & res.statusCode == 200) {
             url_data = JSON.stringify(data);
-            console.log(url_data);
+            // for (var k = 0; k < 99; k++) {
+
+            // }
+            image_url = url_data.id
+            console.log(image_url);
+
         }
 
 
@@ -143,8 +149,8 @@ function dcard_sex_draw(event) {
 
         // image_msg = {
         //     type: 'image',
-        //     originalContentUrl: 'https://i.imgur.com/2tClM3u.jpg',
-        //     previewImageUrl: 'https://i.imgur.com/2tClM3u.jpg',
+        //     originalContentUrl: image_url,
+        //     previewImageUrl: image_url,
         // }
         // event.reply(image_msg)
     })
