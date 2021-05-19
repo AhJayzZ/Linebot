@@ -120,9 +120,9 @@ function drawcard(event) {
 
 
 function dcard_sex_draw(event) {
-
+    const limit = 100;
     myrequest = {
-        url: 'https://www.dcard.tw/service/api/v2/forums/sex/posts?limit=100',
+        url: 'https://www.dcard.tw/service/api/v2/forums/sex/posts?limit=' + str(limit),
         method: 'GET',
         json: true,
     }
@@ -136,8 +136,8 @@ function dcard_sex_draw(event) {
             return console.log('Status code:', res.statusCode);
         if (!error & res.statusCode == 200) {
             url_data = JSON.stringify(data);
-            for (var k = 0; k < 99; k++) {
-                dcard_sex_image_url.push(url_data[k].media[0])
+            for (var k = 0; k < limit; k++) {
+                dcard_sex_image_url.push(url_data[k].media)
             }
 
             console.log(dcard_sex_image_url);
