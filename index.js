@@ -87,7 +87,7 @@ function drawcard(event) {
 
 function dcard_sex_draw(event) {
     var dcard_sex_image_url = [];
-    const limit = 2;
+    const limit = 1;
     myrequest = {
         url: 'https://www.dcard.tw/service/api/v2/forums/sex/posts?limit=' + String(limit),
         method: 'GET',
