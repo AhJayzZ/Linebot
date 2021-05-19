@@ -35,7 +35,7 @@ bot.on('message', function(event) {
             drawcard(event);
 
         // Draw a sexy image
-        if (parseInt(msg.indexOf('福利')) != -1)
+        if (parseInt(msg.indexOf('福利')) != -1 || parseInt(msg.indexOf('福z')) != -1)
             dcard_sex_draw(event);
 
         if (parseInt(msg.indexOf('王勁杰')) != -1)
