@@ -119,11 +119,18 @@ function drawcard(event) {
 
 
 function dcard_sex_draw(event) {
-    event.reply('收到');
+    //event.reply('收到');
     myrequest = {
         url: 'https://www.dcard.tw/service/api/v2/forums/sex/posts?limit=100',
         method: 'GET',
     }
+
+    test = {
+        type: 'image',
+        originalContentUrl: 'https://i.imgur.com/2tClM3u.jpg',
+        previewImageUrl: 'https://i.imgur.com/2tClM3u.jpg',
+    }
+    event.reply(test)
 
     request(myrequest, (error, res, data) => {
         if (error)
@@ -131,8 +138,11 @@ function dcard_sex_draw(event) {
         if (res.statusCode != 200)
             return console.log('Status code:', res.statusCode);
         if (!error & res.statusCode == 200) {
-            console.log(data)
+            console.log(data);
             let json_data = JSON.parse(data);
+            // JSON.stringify(json_data,(key,value)=>{
+
+            // )
             console.log(json_data);
         }
     })
