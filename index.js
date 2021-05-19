@@ -90,7 +90,7 @@ function drawcard(event) {
             'Cache-Control': 'max-age=0',
             'Accept-Language': 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7,zh-CN;q=0.6',
             'Connection': 'keep-alive',
-            'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="90", "Google Chrome";v="90"'
+            'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="90", "Google Chrome";v="90"',
             'sec-ch-ua-mobile': '?0',
             'Sec-Fetch-Dest': 'document',
             'Sec-Fetch-Mode': 'navigate',
