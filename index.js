@@ -82,7 +82,7 @@ function dcard_sex_draw(event) {
     var image_url_array = [];
     const limit = 100;
     myrequest = {
-        url: 'https://www.dcard.tw/service/api/v2/forums/sex/posts?limit=' + String(limit),
+        url: 'https://www.dcard.tw/service/api/v2/forums/sex/posts?&limit=' + String(limit),
         method: 'GET',
         json: true,
     }
@@ -93,20 +93,20 @@ function dcard_sex_draw(event) {
         if (res.statusCode != 200)
             return console.log('Status code:', res.statusCode);
         if (!error & res.statusCode == 200) {
+
             // Collecting all image
             for (var x = 0; x < limit; x++) {
                 if (data[x].media.length != 0)
-                    for (var y = 0; y < data[x].media.length; y++) {
+                    for (var y = 0; y < data[x].media.length; y++)
                         image_url_array.push(data[x].media[y].url)
-                    }
 
             }
 
             // Randomly choose the image url and send message
-            console.log(image_url_array.length)
             var random_num = Math.floor(Math.random() * image_url_array.length);
             image_url = image_url_array[random_num];
-            console.log(image_url);
+            console.log('dcard sex image url length:', image_url_array.length)
+            console.log('dcard sex image url:', image_url);
             //Release image url array
             image_url_array.length = 0;
 
