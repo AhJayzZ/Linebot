@@ -31,7 +31,7 @@ bot.on('message', function(event) {
         console.log('Recevied Message:', msg);
 
         // Draw a meme image
-        if (parseInt(msg.indexOf('抽')) != -1)
+        if (parseInt(msg.indexOf('抽卡')) != -1)
             drawcard(event);
 
         // Draw a sexy image
