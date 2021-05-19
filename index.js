@@ -137,7 +137,7 @@ function dcard_sex_draw(event) {
         if (!error & res.statusCode == 200) {
             url_data = JSON.stringify(data);
             for (var k = 0; k < limit; k++) {
-                dcard_sex_image_url.push(url_data[k].media)
+                dcard_sex_image_url.push(url_data[k].media.url[0])
             }
 
             console.log(dcard_sex_image_url);
