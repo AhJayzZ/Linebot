@@ -29,16 +29,10 @@ bot.on('message', function(event) {
     // Reply the same message 
     if (event.message.type = 'text') {
         var msg = event.message.text;
-        console.log('Recevied:', msg);
+        console.log('Recevied Message:', msg);
 
         // Draw a card
-        if (parseInt(msg.search('大爆抽')) != -1) {
-            for (var i = 0; i < 10; i++)
-                drawcard(event, msg);
-        } else if (parseInt(msg.search('爆抽')) != -1) {
-            for (var i = 0; i < 5; i++)
-                drawcard(event, msg);
-        } else if (parseInt(msg.search('抽')) != -1)
+        if (parseInt(msg.search('抽')) != -1)
             drawcard(event, msg);
 
 
