@@ -176,7 +176,7 @@ function meme_video(event) {
                 console.log('body:', body)
                 const parser = new DOMParser();
                 var htmlDoc = parser.parseFromString(body, 'text/html');
-                var mp4_class_name = htmlDoc.getElementsByClassName('media media_fun js-media js-playlist-media');
+                var mp4_class_name = htmlDoc.getElementsByClassName('media media_fun js-media js-playlist-media ')[0];
                 console.log('mp4 class name:', mp4_class_name)
                 var mp4_url = mp4_class_name.getAttribute('data-source');
                 console.log('mp4_url:', mp4_url);
