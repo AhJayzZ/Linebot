@@ -26,14 +26,14 @@ bot.on('message', function(event) {
         console.log('Recevied Message:', msg);
 
         // Draw a meme image
-        if (parseInt(msg.indexOf('抽')) != -1 || parseInt(msg.indexOf('抽gif')) != -1)
+        if (parseInt(msg.indexOf('抽')) != -1)
             drawcard(event);
 
         // Draw a sexy image
         if (parseInt(msg.indexOf('福利')) != -1 || parseInt(msg.indexOf('福z')) != -1)
             dcard_sex_draw(event);
 
-        // Draw a meme video
+        // Draw a meme videoㄩ
         if (parseInt(msg.indexOf('大便片')) != -1)
             meme_video(event)
 
@@ -66,11 +66,12 @@ bot.on('message', function(event) {
 
 
 function drawcard(event) {
-    if (event.message.text == '抽') {
+    var msg = event.message.text
+    if (msg.search('抽') != -1) {
         // For jpg image
         var random_num = Math.floor(Math.random() * 5000);
         meme_url = 'https://memes.tw/wtf?page=' + String(random_num);
-    } else if (event.message.text == '抽gif') {
+    } else if (msg.search('抽gif') != -1) {
         // For gif image
         var random_num = Math.floor(Math.random() * 45);
         meme_url = 'https://memes.tw/gif-post?page=' + String(random_num);
