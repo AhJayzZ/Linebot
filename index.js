@@ -147,7 +147,7 @@ function dcard_sex_draw(event) {
 
 function meme_video(event) {
     var random_page = Math.floor(Math.random() * 400);
-    const meme_home_url = 'https://ifunny.co/memes?filter=video&page=' + String(random_page);
+    const meme_home_url = 'https://ifunny.co/memes/page' + String(random_page) + '?filter=video';
     event.reply('收到')
 
 
@@ -157,7 +157,14 @@ function meme_video(event) {
         if (res.statusCode != 200)
             return console.log('Status code:', res.statusCode);
         if (!error & res.statusCode == 200) {
-            console.log(body)
+            //console.log(body)
+            const parser = new DOMParser();
+            var random_index = Math.floor(Math.random() * 20);
+            var htmlDoc = parser.parseFromString(body, 'text/html');
+            var video_class_name = htmlDoc.getElementsByClassName('grid__link js-goalcollector-action js-dwhcollector-actionsource')[random_index];
+            var video_url = video_class_name.getAttribute('href');
+            console.log('video_url:', video_url);
+
         }
     })
 
