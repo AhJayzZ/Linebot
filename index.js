@@ -2,9 +2,6 @@ const linebot = require('linebot')
 const express = require('express')
 const request = require('request')
 const DOMParser = require('dom-parser')
-const { json } = require('express')
-
-
 
 var bot = linebot({
     channelId: 1653887573,
@@ -14,10 +11,6 @@ var bot = linebot({
 })
 
 //-------------------------------------------------------------------------
-
-
-var name = ['王勁杰', '張上為', '林明輝', '莊家豪', '陳鴻宇', '張庭偉', '喇賽', '曾國祐', '翁廷翰', '姚勝文', '陳孟謙', '辛世文', '碰光軍光軍碰', 'Hao', '國祐'];
-var dictionary = ['你媽死了', '幹你媽閉嘴', '耖及掰啦', '蔡英文執政的下場', '低能兒'];
 
 
 bot.on('message', function(event) {
