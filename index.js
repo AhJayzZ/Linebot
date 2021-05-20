@@ -174,6 +174,8 @@ function meme_video(event) {
             if (!error & res.statusCode == 200) {
                 const parser = new DOMParser();
                 var htmlDoc = parser.parseFromString(body, 'text/html');
+                var preview_image_class_name = htmlDoc.getElementsByClassName('js-media-player media__player')[0];
+                var preview_image_url = preview_image_class_name.getAttribute('poster');
                 var mp4_class_name = htmlDoc.getElementsByClassName('media media_fun js-media js-playlist-media ')[0];
                 var mp4_url = mp4_class_name.getAttribute('data-source');
                 console.log('mp4_url:', mp4_url);
@@ -182,7 +184,7 @@ function meme_video(event) {
                 var video_msg = {
                     'type': 'video',
                     'originalContentUrl': mp4_url,
-                    'previewImageUrl': mp4_url,
+                    'previewImageUrl': preview_image_url,
                 }
                 event.reply(video_msg)
             }
