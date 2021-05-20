@@ -26,7 +26,7 @@ bot.on('message', function(event) {
         console.log('Recevied Message:', msg);
 
         // Draw a meme image
-        if (parseInt(msg.indexOf('抽')) != -1)
+        if (parseInt(msg.indexOf('抽')) != -1 || parseInt(msg.indexOf('抽gif')) != -1)
             drawcard(event);
 
         // Draw a sexy image
@@ -57,7 +57,6 @@ bot.on('message', function(event) {
         }
 
 
-
         // if (parseInt(msg.indexOf('王勁杰')) != -1)
         //     event.reply('老大還在睡覺');
 
@@ -67,8 +66,15 @@ bot.on('message', function(event) {
 
 
 function drawcard(event) {
-    var random_num = Math.floor(Math.random() * 5000);
-    meme_url = 'https://memes.tw/wtf?page=' + String(random_num);
+    if (event.message.text == '抽') {
+        var random_num = Math.floor(Math.random() * 5000);
+        meme_url = 'https://memes.tw/wtf?page=' + String(random_num);
+    } else if (event.message.text == '抽gif') {
+        var random_num = Math.floor(Math.random() * 45);
+        meme_url = 'https://memes.tw/gif-post?page=' + String(random_num);
+    }
+
+
     console.log('memeUrl:', meme_url);
 
     request(meme_url, function(error, response, body) {
