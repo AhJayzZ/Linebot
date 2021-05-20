@@ -2,7 +2,7 @@ const linebot = require('linebot')
 const express = require('express')
 const request = require('request')
 const DOMParser = require('dom-parser')
-const ifunny = require('ifunny')
+let ifunny = require('ifunny')
 
 var bot = linebot({
     channelId: 1653887573,
@@ -153,6 +153,7 @@ function meme_video(event) {
         else if (res.statusCode != 200)
             console.log('Status Code:', res.statusCode);
         else {
+            event.reply('收到')
             console.log(res);
 
         }
