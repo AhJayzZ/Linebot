@@ -88,7 +88,7 @@ function drawcard(event) {
         var image_url = image_class_name.getAttribute('data-src');
         console.log('image_url:', image_url);
 
-        image_msg = {
+        var image_msg = {
             type: 'image',
             originalContentUrl: image_url,
             previewImageUrl: image_url,
@@ -132,7 +132,7 @@ function dcard_sex_draw(event) {
             //Release image url array
             image_url_array.length = 0;
 
-            image_msg = {
+            var image_msg = {
                 type: 'image',
                 originalContentUrl: image_url,
                 previewImageUrl: image_url,
@@ -157,7 +157,6 @@ function meme_video(event) {
         if (res.statusCode != 200)
             return console.log('Status code:', res.statusCode);
         if (!error & res.statusCode == 200) {
-            event.reply('收到')
             const parser = new DOMParser();
             var random_index = Math.floor(Math.random() * 20);
             var htmlDoc = parser.parseFromString(body, 'text/html');
@@ -176,9 +175,17 @@ function meme_video(event) {
                 event.reply('收到')
                 const parser = new DOMParser();
                 var htmlDoc = parser.parseFromString(body, 'text/html');
-                var mp4_class_name = htmlDoc.getElementsByClassName('class="media media_fun js-media js-playlist-media js-media-ready is-reverse js-media-reverse js-media-playthrough"');
+                var mp4_class_name = htmlDoc.getElementsByClassName('class="media media_fun js-media js-playlist-media js-media-ready is-reverse js-media-reverse js-media-playthrough"')[0];
                 var mp4_url = mp4_class_name.getAttribute('data-source');
                 console.log('mp4_url:', mp4_url);
+
+                // Step 3.Sending the video 
+                var video_msg = {
+                    'type': 'video',
+                    'originalContentUrl': mp4_url,
+                    'previewImageUrl': mp4_url,
+                }
+                event.reply(video_msg)
 
             }
         })
