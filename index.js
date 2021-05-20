@@ -174,6 +174,7 @@ function meme_video(event) {
             if (!error & res.statusCode == 200) {
                 const parser = new DOMParser();
                 var htmlDoc = parser.parseFromString(body, 'text/html');
+                console.log(htmlDoc)
                 var preview_image_class_name = htmlDoc.getElementsByClassName('js-media-player media__player')[0];
                 var preview_image_url = preview_image_class_name.getAttribute('poster');
                 var mp4_class_name = htmlDoc.getElementsByClassName('media media_fun js-media js-playlist-media ')[0];
