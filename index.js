@@ -150,26 +150,40 @@ function meme_video(event) {
     const meme_base_url = 'https://ifunny.co/';
     const meme_home_url = 'https://ifunny.co/memes/page' + String(random_page) + '?filter=video';
 
-    request(meme_home_url, { method: 'GET' }, (error, res, body) => {
+    //Step 1.Get random video content url
+    video_url = request(meme_home_url, { method: 'GET' }, (error, res, body) => {
         if (error)
             return console.log('Error:', error);
         if (res.statusCode != 200)
             return console.log('Status code:', res.statusCode);
         if (!error & res.statusCode == 200) {
             event.reply('收到')
-
             const parser = new DOMParser();
             var random_index = Math.floor(Math.random() * 20);
             var htmlDoc = parser.parseFromString(body, 'text/html');
             var video_class_name = htmlDoc.getElementsByClassName('grid__link js-goalcollector-action js-dwhcollector-actionsource')[random_index];
             var video_url = meme_base_url + String(video_class_name.getAttribute('href'));
             console.log('video_url:', video_url);
-
+            return video_url
         }
     })
 
+    //Step 2.Get mp4 in video url
+    mp4_url = request(video_url, { method: 'GET' }, (error, res, body) => {
+        if (error)
+            return console.log('Error:', error);
+        if (res.statusCode != 200)
+            return console.log('Status code:', res.statusCode);
+        if (!error & res.statusCode == 200) {
+            event.reply('收到')
+            const parser = new DOMParser();
+            var htmlDoc = parser.parseFromString(body, 'text/html');
+            var mp4_class_name = htmlDoc.getElementsByClassName('class="media media_fun js-media js-playlist-media js-media-ready is-reverse js-media-reverse js-media-playthrough"');
+            var mp4_url = mp4_class_name.getAttribute('data-source');
+            console.log('mp4_url:', mp4_url);
 
-
+        }
+    })
 
 }
 
