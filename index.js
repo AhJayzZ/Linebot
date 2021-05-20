@@ -38,10 +38,9 @@ bot.on('message', function(event) {
         if (parseInt(msg.indexOf('福利')) != -1 || parseInt(msg.indexOf('福z')) != -1)
             dcard_sex_draw(event);
 
-        if (parseInt(msg.indexOf('王勁杰')) != -1)
-            event.reply('老大還在睡覺zZZ');
-        if (parseInt(msg.indexOf('z')) != -1 || parseInt(msg.indexOf('Z')) != -1)
-            event.reply('z沙小');
+        // if (parseInt(msg.indexOf('王勁杰')) != -1)
+        //     event.reply('老大還在睡覺');
+
     }
 
 });
