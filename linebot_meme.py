@@ -9,3 +9,7 @@ div = soup.findAll('img',{'referrerpolicy':'no-referrer'})
 
 for index in div:
     print(index['src'])
+
+
+res = requests.get('https://www.google.com.tw/maps/search/%E5%85%A8%E8%81%AF/')
+soup = BeautifulSoup(res.text,'html.parser')

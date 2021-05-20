@@ -24,12 +24,21 @@ bot.on('message', function(event) {
         console.log('Recevied Message:', msg);
 
         // Draw a meme image
-        if (parseInt(msg.indexOf('抽卡')) != -1)
+        if (parseInt(msg.indexOf('抽')) != -1)
             drawcard(event);
 
         // Draw a sexy image
         if (parseInt(msg.indexOf('福利')) != -1 || parseInt(msg.indexOf('福z')) != -1)
             dcard_sex_draw(event);
+
+        if (parseInt(msg.indexOf('讚')) != -1 || parseInt(msg.indexOf('言贊')) != -1) {
+            sticker_msg = {
+                "type": "sticker",
+                "packageId": "11539",
+                "stickerId": "52114117"
+            }
+            event.reply(sticker_msg)
+        }
 
         // if (parseInt(msg.indexOf('王勁杰')) != -1)
         //     event.reply('老大還在睡覺');
