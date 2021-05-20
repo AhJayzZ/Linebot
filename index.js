@@ -2,7 +2,7 @@ const linebot = require('linebot')
 const express = require('express')
 const request = require('request')
 const DOMParser = require('dom-parser')
-let ifunny = require('ifunny')
+
 
 var bot = linebot({
     channelId: 1653887573,
@@ -147,18 +147,7 @@ function dcard_sex_draw(event) {
 
 function meme_video(event) {
     const api_key = '563492ad6f91700001000001b30a029fe22e445f9e907025b86afc07';
-    ifunny({ shuffle: true }, function(error, res) {
-        if (error)
-            console.log('Error:', error);
-        else if (res.statusCode != 200)
-            console.log('Status Code:', res.statusCode);
-        else {
-            event.reply('收到')
-            console.log(res);
-
-        }
-
-    })
+    event.reply('收到')
 
 }
 
