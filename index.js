@@ -26,7 +26,7 @@ bot.on('message', function(event) {
         console.log('Recevied Message:', msg);
 
         // Draw a funny meme
-        if (parseInt(msg.indexOf('!抽')) != -1)
+        if (parseInt(msg.indexOf('怒抽')) != -1)
             dcard_meme_draw(event);
 
 
@@ -53,7 +53,7 @@ bot.on('message', function(event) {
             event.reply(sticker_msg)
         }
 
-        if (msg == '!怒尻') {
+        if (msg == '怒尻') {
             video_msg = {
                 'type': 'video',
                 'originalContentUrl': 'https://kekma.net/zzart.mp4',
@@ -129,8 +129,7 @@ function dcard_meme_draw(event) {
         if (res.statusCode != 200)
             return console.log('Status code:', res.statusCode);
         if (!error & res.statusCode == 200) {
-            event.reply('收到')
-                // Collecting all image
+            // Collecting all image
             for (var x = 0; x < limit; x++) {
                 if (data[x].mediaMeta.length != 0)
                     for (var y = 0; y < data[x].mediaMeta.length; y++) {
@@ -138,11 +137,23 @@ function dcard_meme_draw(event) {
                         image_url_array.push(data[x].mediaMeta[y].url)
                     }
             }
+
+            // Randomly choose the image url and send message
+            var random_num = Math.floor(Math.random() * image_url_array.length);
+            image_url = image_url_array[random_num];
+            console.log('dcard meme image url:', image_url);
+            //Release image url array
+            image_url_array.length = 0;
+
+            var image_msg = {
+                type: 'image',
+                originalContentUrl: image_url,
+                previewImageUrl: image_url,
+            }
+            event.reply(image_msg);
         }
-        console.log('image_url_arry:', image_url_array)
     })
 }
-
 
 
 //-------------------------------------------------------------------------------------
