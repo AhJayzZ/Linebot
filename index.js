@@ -67,9 +67,11 @@ bot.on('message', function(event) {
 
 function drawcard(event) {
     if (event.message.text == '抽') {
+        // For jpg image
         var random_num = Math.floor(Math.random() * 5000);
         meme_url = 'https://memes.tw/wtf?page=' + String(random_num);
     } else if (event.message.text == '抽gif') {
+        // For gif image
         var random_num = Math.floor(Math.random() * 45);
         meme_url = 'https://memes.tw/gif-post?page=' + String(random_num);
     }
@@ -127,7 +129,6 @@ function dcard_sex_draw(event) {
                 if (data[x].media.length != 0)
                     for (var y = 0; y < data[x].media.length; y++)
                         image_url_array.push(data[x].media[y].url)
-
             }
 
             // Randomly choose the image url and send message
@@ -180,7 +181,6 @@ function meme_video(event) {
             if (!error & res.statusCode == 200) {
                 const parser = new DOMParser();
                 var htmlDoc = parser.parseFromString(body, 'text/html');
-                console.log(htmlDoc)
                 var preview_image_class_name = htmlDoc.getElementsByClassName('js-media-player')[0];
                 var preview_image_url = preview_image_class_name.getAttribute('poster');
                 var mp4_class_name = htmlDoc.getElementsByClassName('media media_fun js-media js-playlist-media ')[0];
