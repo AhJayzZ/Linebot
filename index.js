@@ -68,13 +68,13 @@ bot.on('message', function(event) {
 function drawcard(event) {
     var msg = event.message.text
     if (msg.search('抽') != -1) {
-        // For jpg image
-        var random_num = Math.floor(Math.random() * 5000);
-        meme_url = 'https://memes.tw/wtf?page=' + String(random_num);
-    } else if (msg.search('抽gif') != -1) {
         // For gif image
         var random_num = Math.floor(Math.random() * 45);
         meme_url = 'https://memes.tw/gif-post?page=' + String(random_num);
+    } else if (msg.search('抽gif') != -1) {
+        // For jpg image
+        var random_num = Math.floor(Math.random() * 5000);
+        meme_url = 'https://memes.tw/wtf?page=' + String(random_num);
     }
 
 
