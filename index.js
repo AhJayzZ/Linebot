@@ -44,7 +44,7 @@ bot.on('message', function(event) {
             video_msg = {
                 'type': 'video',
                 'originalContentUrl': 'https://kekma.net/zzart.mp4',
-                'previewImageUrl': 'https: //kekma.net/button.jpg',
+                'previewImageUrl': 'https://kekma.net/button.jpg',
             }
             event.reply(video_msg)
         }
