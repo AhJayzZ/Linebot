@@ -176,7 +176,7 @@ function meme_video(event) {
                 console.log('body:', body)
                 const parser = new DOMParser();
                 var htmlDoc = parser.parseFromString(body, 'text/html');
-                var mp4_class_name = htmlDoc.getElementsByClassName('media media_fun js-media js-playlist-media js-media-ready is-reverse js-media-reverse js-media-playthrough');
+                var mp4_class_name = htmlDoc.getElementsByClassName('media media_fun js-media js-playlist-media');
                 console.log('mp4 class name:', mp4_class_name)
                 var mp4_url = mp4_class_name.getAttribute('data-source');
                 console.log('mp4_url:', mp4_url);
@@ -188,8 +188,8 @@ function meme_video(event) {
                     'previewImageUrl': mp4_url,
                 }
                 event.reply(video_msg)
-
             }
+
         })
 
     })
