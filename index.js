@@ -173,6 +173,7 @@ function meme_video(event) {
                 return console.log('Status code:', res.statusCode);
             if (!error & res.statusCode == 200) {
                 event.reply('收到')
+                console.log('body:', body)
                 const parser = new DOMParser();
                 var htmlDoc = parser.parseFromString(body, 'text/html');
                 var mp4_class_name = htmlDoc.getElementsByClassName('media media_fun js-media js-playlist-media js-media-ready is-reverse js-media-reverse js-media-playthrough');
