@@ -17,7 +17,6 @@ var bot = linebot({
 
 bot.on('message', function(event) {
     // Log the event
-
     console.log(event);
 
     // Reply the same message 
@@ -41,6 +40,7 @@ bot.on('message', function(event) {
         if (parseInt(msg.indexOf('大便片')) != -1)
             meme_video(event);
 
+        // Stricker_GOOD
         if (parseInt(msg.indexOf('讚')) != -1 || parseInt(msg.indexOf('言贊')) != -1) {
             sticker_msg = {
                 "type": "sticker",
@@ -50,7 +50,8 @@ bot.on('message', function(event) {
             event.reply(sticker_msg);
         }
 
-        if (msg == '怒尻') {
+        // Secret
+        if (parseInt(msg.indexOf('怒尻')) != -1) {
             video_msg = {
                 'type': 'video',
                 'originalContentUrl': 'https://kekma.net/zzart.mp4',
