@@ -2,6 +2,7 @@ const linebot = require('linebot')
 const express = require('express')
 const request = require('request')
 const DOMParser = require('dom-parser')
+const ifunny = require('ifunny')
 
 var bot = linebot({
     channelId: 1653887573,
@@ -11,6 +12,7 @@ var bot = linebot({
 })
 
 //-------------------------------------------------------------------------
+
 
 
 bot.on('message', function(event) {
@@ -30,6 +32,11 @@ bot.on('message', function(event) {
         // Draw a sexy image
         if (parseInt(msg.indexOf('福利')) != -1 || parseInt(msg.indexOf('福z')) != -1)
             dcard_sex_draw(event);
+
+        // Draw a meme video
+        if (parseInt(msg.indexOf('大便片')) != -1)
+            meme_video(event)
+
 
         if (parseInt(msg.indexOf('讚')) != -1 || parseInt(msg.indexOf('言贊')) != -1) {
             sticker_msg = {
@@ -136,6 +143,26 @@ function dcard_sex_draw(event) {
 
     })
 }
+
+
+function meme_video(event) {
+    const api_key = '563492ad6f91700001000001b30a029fe22e445f9e907025b86afc07';
+    ifunny({ shuffle: true }, function(error, res) {
+        if (error)
+            console.log('Error:', error);
+        else if (res.statusCode != 200)
+            console.log('Status Code:', res.statusCode);
+        else {
+            console.log(res);
+
+        }
+
+    })
+
+}
+
+
+
 
 
 const app = express();
