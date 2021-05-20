@@ -25,12 +25,11 @@ bot.on('message', function(event) {
         var msg = event.message.text;
         console.log('Recevied Message:', msg);
 
-        // Draw a funny meme
+        // Draw a funny meme image
         if (parseInt(msg.indexOf('怒抽')) != -1)
             dcard_meme_draw(event);
 
-
-        // Draw a random image
+        // Draw a random meme image
         if (parseInt(msg.indexOf('抽')) != -1)
             drawcard(event);
 
@@ -38,11 +37,9 @@ bot.on('message', function(event) {
         if (parseInt(msg.indexOf('福利')) != -1 || parseInt(msg.indexOf('福z')) != -1)
             dcard_sex_draw(event);
 
-
-        // Draw a meme videoㄩ
+        // Draw a meme video
         if (parseInt(msg.indexOf('大便片')) != -1)
-            meme_video(event)
-
+            meme_video(event);
 
         if (parseInt(msg.indexOf('讚')) != -1 || parseInt(msg.indexOf('言贊')) != -1) {
             sticker_msg = {
@@ -50,7 +47,7 @@ bot.on('message', function(event) {
                 "packageId": "11539",
                 "stickerId": "52114117"
             }
-            event.reply(sticker_msg)
+            event.reply(sticker_msg);
         }
 
         if (msg == '怒尻') {
@@ -70,7 +67,9 @@ bot.on('message', function(event) {
 
 });
 
+
 //-------------------------------------------------------------------------------------
+
 function drawcard(event) {
     var msg = event.message.text
     if (msg.search('抽gif') != -1) {
@@ -115,6 +114,7 @@ function drawcard(event) {
 }
 
 //-------------------------------------------------------------------------------------
+
 function dcard_meme_draw(event) {
     var image_url_array = [];
     const limit = 100;
@@ -132,10 +132,8 @@ function dcard_meme_draw(event) {
             // Collecting all image
             for (var x = 0; x < limit; x++) {
                 if (data[x].mediaMeta.length != 0)
-                    for (var y = 0; y < data[x].mediaMeta.length; y++) {
-                        console.log('data[x].mediaMeat[y].url:', data[x].mediaMeta[y].url)
-                        image_url_array.push(data[x].mediaMeta[y].url)
-                    }
+                    for (var y = 0; y < data[x].mediaMeta.length; y++)
+                        image_url_array.push(data[x].mediaMeta[y].url);
             }
 
             // Randomly choose the image url and send message
@@ -202,6 +200,7 @@ function dcard_sex_draw(event) {
 }
 
 //-------------------------------------------------------------------------------------
+
 function meme_video(event) {
     var random_page = Math.floor(Math.random() * 400);
     const meme_base_url = 'https://ifunny.co/';
