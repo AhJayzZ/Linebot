@@ -40,6 +40,17 @@ bot.on('message', function(event) {
             event.reply(sticker_msg)
         }
 
+        if (msg == '!噁爛') {
+            video_msg = {
+                'type': 'video',
+                'originalContentUrl': 'https://kekma.net/zzart.mp4',
+                'previewImageUrl': 'https: //kekma.net/button.jpg',
+            }
+            event.reply(video_msg)
+        }
+
+
+
         // if (parseInt(msg.indexOf('王勁杰')) != -1)
         //     event.reply('老大還在睡覺');
 
