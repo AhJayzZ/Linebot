@@ -5,6 +5,6 @@ from bs4 import BeautifulSoup
 
 
 
-res = requests.get('https://ifunny.co/video/Xt1QZ0va8?gallery=tag&query=mp4')
+res = requests.get('https://www.dcard.tw/service/api/v2/forums/meme/posts?&limit=100')
 soup = BeautifulSoup(res.text,'html.parser')
 print(soup)

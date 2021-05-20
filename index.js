@@ -25,13 +25,19 @@ bot.on('message', function(event) {
         var msg = event.message.text;
         console.log('Recevied Message:', msg);
 
-        // Draw a meme image
+        // Draw a funny meme
+        if (parseInt(msg.indexOf('!抽')) != -1)
+            dcard_meme_draw(event);
+
+
+        // Draw a random image
         if (parseInt(msg.indexOf('抽')) != -1)
             drawcard(event);
 
         // Draw a sexy image
         if (parseInt(msg.indexOf('福利')) != -1 || parseInt(msg.indexOf('福z')) != -1)
             dcard_sex_draw(event);
+
 
         // Draw a meme videoㄩ
         if (parseInt(msg.indexOf('大便片')) != -1)
@@ -64,7 +70,7 @@ bot.on('message', function(event) {
 
 });
 
-
+//-------------------------------------------------------------------------------------
 function drawcard(event) {
     var msg = event.message.text
     if (msg.search('抽gif') != -1) {
@@ -108,6 +114,38 @@ function drawcard(event) {
     });
 }
 
+//-------------------------------------------------------------------------------------
+function dcard_meme_draw(event) {
+    var image_url_array = [];
+    const limit = 100;
+    myrequest = {
+        url: 'https://www.dcard.tw/service/api/v2/forums/meme/posts?&limit=' + String(limit),
+        method: 'GET',
+        json: true,
+    }
+    request(myrequest, (error, res, data) => {
+        if (error)
+            return console.log('Error:', error);
+        if (res.statusCode != 200)
+            return console.log('Status code:', res.statusCode);
+        if (!error & res.statusCode == 200) {
+            event.reply('收到')
+                // Collecting all image
+            for (var x = 0; x < limit; x++) {
+                if (data[x].mediaMeta.length != 0)
+                    for (var y = 0; y < data[x].mediaMeta.length; y++) {
+                        console.log('data[x].mediaMeat[y].url:', data[x].mediaMeta[y].url)
+                        image_url_array.push(data[x].mediaMeta[y].url)
+                    }
+            }
+        }
+        console.log('image_url_arry:', image_url_array)
+    })
+}
+
+
+
+//-------------------------------------------------------------------------------------
 
 function dcard_sex_draw(event) {
     var image_url_array = [];
@@ -152,7 +190,7 @@ function dcard_sex_draw(event) {
     })
 }
 
-
+//-------------------------------------------------------------------------------------
 function meme_video(event) {
     var random_page = Math.floor(Math.random() * 400);
     const meme_base_url = 'https://ifunny.co/';
@@ -202,7 +240,7 @@ function meme_video(event) {
     })
 }
 
-// -------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------
 
 const app = express();
 const linebotParser = bot.parser();
