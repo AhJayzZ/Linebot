@@ -47,7 +47,7 @@ bot.on('message', function(event) {
             event.reply(sticker_msg)
         }
 
-        if (msg == '!噁爛') {
+        if (msg == '!怒尻') {
             video_msg = {
                 'type': 'video',
                 'originalContentUrl': 'https://kekma.net/zzart.mp4',
