@@ -268,8 +268,7 @@ function covid_19_check(event) {
             return console.log('Status code:', res.statusCode);
         if (!error & res.statusCode == 200) {
             const parser = new DOMParser();
-            var htmlDoc = parser.parseFromString(body, 'text/html');
-
+            var htmlDoc = parser.parseFromString(data, 'text/html');
 
             //Yesterday
             var yesterday_total_report = '昨日通報數:' + htmlDoc.getElementById('num6')[0].value + '\n';
@@ -287,16 +286,10 @@ function covid_19_check(event) {
             event.reply(yesterday_total_report + yesterday_report_exclude + yesterday_confirmed_case + '\n' +
                 total_report + report_exclude + confirmed_case + confirmed_dead + isolated_release + total_incident)
         }
-    })
-
-
+    });
 
 
 }
-
-
-
-
 
 
 //-------------------------------------------------------------------------------------
