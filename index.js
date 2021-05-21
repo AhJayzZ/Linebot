@@ -268,7 +268,7 @@ function covid_19_check(event) {
         if (!error & res.statusCode == 200) {
             const parser = new DOMParser();
             var htmlDoc = parser.parseFromString(body, 'text/html');
-
+            console.log(htmlDoc);
             //Yesterday
             var yesterday_total_report = '昨日通報數: ' + htmlDoc.getElementById('num6').innerHTML + '\n';
             var yesterday_report_exclude = '昨日排除數: ' + htmlDoc.getElementById('num7').innerHTML + '\n';
