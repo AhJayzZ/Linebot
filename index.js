@@ -258,17 +258,16 @@ function meme_video(event) {
 //-------------------------------------------------------------------------------------
 
 function covid_19_check(event) {
+
     const cdc_url = 'https://sites.google.com/cdc.gov.tw/2019ncov/taiwan';
-
-
-    request(cdc_url, { method: 'GET' }, (error, res, data) => {
+    request(cdc_url, { method: 'GET' }, (error, res, body) => {
         if (error)
             return console.log('Error:', error);
         if (res.statusCode != 200)
             return console.log('Status code:', res.statusCode);
         if (!error & res.statusCode == 200) {
             const parser = new DOMParser();
-            var htmlDoc = parser.parseFromString(data, 'text/html');
+            var htmlDoc = parser.parseFromString(body, 'text/html');
 
             //Yesterday
             var yesterday_total_report = '昨日通報數:' + htmlDoc.getElementById('num6')[0].value + '\n';
