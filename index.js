@@ -270,7 +270,7 @@ function covid_19_check(event) {
             var htmlDoc = parser.parseFromString(body, 'text/html');
 
             //Yesterday
-            var yesterday_total_report = '昨日通報數: ' + htmlDoc.getElementById('num6').value + '\n';
+            var yesterday_total_report = '昨日通報數: ' + htmlDoc.getElementById('num6').textContent + '\n';
             var yesterday_report_exclude = '昨日排除數: ' + htmlDoc.getElementById('num7').value + '\n';
             var yesterday_confirmed_case = '昨日確診數: ' + htmlDoc.getElementById('num8').value + '\n';
 
