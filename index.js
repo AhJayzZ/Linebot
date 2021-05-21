@@ -270,17 +270,17 @@ function covid_19_check(event) {
             var htmlDoc = parser.parseFromString(body, 'text/html');
 
             //Yesterday
-            var yesterday_total_report = '昨日通報數: ' + htmlDoc.getElementById('num6').textContent + '\n';
-            var yesterday_report_exclude = '昨日排除數: ' + htmlDoc.getElementById('num7').value + '\n';
-            var yesterday_confirmed_case = '昨日確診數: ' + htmlDoc.getElementById('num8').value + '\n';
+            var yesterday_total_report = '昨日通報數: ' + htmlDoc.getElementById('num6').innerHTML + '\n';
+            var yesterday_report_exclude = '昨日排除數: ' + htmlDoc.getElementById('num7').innerHTML + '\n';
+            var yesterday_confirmed_case = '昨日確診數: ' + htmlDoc.getElementById('num8').innerHTML + '\n';
 
             //Total 
-            var total_report = '總計通報數: ' + String(htmlDoc.getElementById('num1').value) + '\n';
-            var report_exclude = '總計排除數: ' + String(htmlDoc.getElementById('num2').value) + '\n';
-            var confirmed_case = '總計確診數: ' + String(htmlDoc.getElementById('num3').value) + '\n';
-            var confirmed_dead = '總計死亡數: ' + String(htmlDoc.getElementById('num4').value) + '\n';
-            var isolated_release = '總計解除隔離數: ' + String(htmlDoc.getElementById('num5').value) + '\n';
-            var total_incident = '總計事件數: ' + String(htmlDoc.getElementById('num9').value) + '\n';
+            var total_report = '總計通報數: ' + String(htmlDoc.getElementById('num1').innerHTML) + '\n';
+            var report_exclude = '總計排除數: ' + String(htmlDoc.getElementById('num2').innerHTML) + '\n';
+            var confirmed_case = '總計確診數: ' + String(htmlDoc.getElementById('num3').innerHTML) + '\n';
+            var confirmed_dead = '總計死亡數: ' + String(htmlDoc.getElementById('num4').innerHTML) + '\n';
+            var isolated_release = '總計解除隔離數: ' + String(htmlDoc.getElementById('num5').innerHTML) + '\n';
+            var total_incident = '總計事件數: ' + String(htmlDoc.getElementById('num9').innerHTML) + '\n';
 
             event.reply(yesterday_total_report + yesterday_report_exclude + yesterday_confirmed_case + '\n' +
                 total_report + report_exclude + confirmed_case + confirmed_dead + isolated_release + total_incident)
