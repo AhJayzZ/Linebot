@@ -261,7 +261,7 @@ function covid_19_check(event) {
 
     const cdc_data_url = 'https://covid19dashboard.cdc.gov.tw/dash3';
 
-    request(cdc_url, { method: 'GET', json = true }, (error, res, data) => {
+    request(cdc_data_url, { method: 'GET', json = true }, (error, res, data) => {
         if (error)
             return console.log('Error:', error);
         if (res.statusCode != 200)
