@@ -259,31 +259,31 @@ function meme_video(event) {
 
 function covid_19_check(event) {
 
-    const cdc_url = 'https://sites.google.com/cdc.gov.tw/2019ncov/taiwan';
-    request(cdc_url, { method: 'GET' }, (error, res, body) => {
+    const cdc_data_url = 'https://covid19dashboard.cdc.gov.tw/dash3';
+
+    request(cdc_url, { method: 'GET', json = true }, (error, res, data) => {
         if (error)
             return console.log('Error:', error);
         if (res.statusCode != 200)
             return console.log('Status code:', res.statusCode);
         if (!error & res.statusCode == 200) {
             const parser = new DOMParser();
-            var htmlDoc = parser.parseFromString(body, 'text/html');
+            var htmlDoc = parser.parseFromString(data, 'text/html');
             console.log(htmlDoc);
             //Yesterday
-            var yesterday_total_report = '昨日通報數: ' + htmlDoc.getElementById('num6').innerHTML + '\n';
-            var yesterday_report_exclude = '昨日排除數: ' + htmlDoc.getElementById('num7').innerHTML + '\n';
-            var yesterday_confirmed_case = '昨日確診數: ' + htmlDoc.getElementById('num8').innerHTML + '\n';
+            var yesterday_total_report = '昨日通報數: ' + data[0].昨日送驗 + '\n';
+            var yesterday_report_exclude = '昨日排除數: ' + data[0].昨日排除 + '\n';
+            var yesterday_confirmed_case = '昨日確診數: ' + data[0].昨日確診 + '\n';
 
             //Total 
-            var total_report = '總計通報數: ' + String(htmlDoc.getElementById('num1').innerHTML) + '\n';
-            var report_exclude = '總計排除數: ' + String(htmlDoc.getElementById('num2').innerHTML) + '\n';
-            var confirmed_case = '總計確診數: ' + String(htmlDoc.getElementById('num3').innerHTML) + '\n';
-            var confirmed_dead = '總計死亡數: ' + String(htmlDoc.getElementById('num4').innerHTML) + '\n';
-            var isolated_release = '總計解除隔離數: ' + String(htmlDoc.getElementById('num5').innerHTML) + '\n';
-            var total_incident = '總計事件數: ' + String(htmlDoc.getElementById('num9').innerHTML) + '\n';
+            var total_report = '總計通報數: ' + data[0].送驗 + '\n';
+            var report_exclude = '總計排除數: ' + data[0].排除 + '\n';
+            var confirmed_case = '總計確診數: ' + data[0].確診 + '\n';
+            var confirmed_dead = '總計死亡數: ' + data[0].死亡 + '\n';
+            var isolated_release = '總計解除隔離數: ' + data[0].解除隔離 + '\n';
 
             event.reply(yesterday_total_report + yesterday_report_exclude + yesterday_confirmed_case + '\n' +
-                total_report + report_exclude + confirmed_case + confirmed_dead + isolated_release + total_incident)
+                total_report + report_exclude + confirmed_case + confirmed_dead + isolated_release)
         }
     });
 
