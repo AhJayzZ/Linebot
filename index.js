@@ -24,6 +24,11 @@ bot.on('message', function(event) {
         var msg = event.message.text;
         console.log('Recevied Message:', msg);
 
+        // Tutorial
+        if (msg.search('說明') != -1 || msg.search('指令') != -1 || msg.search('help') != -1 || msg.search('Help') != -1)
+            event.reply('目前指令有:抽(From Meme梗圖倉庫) \n抽gif(From Meme梗圖倉庫GIF) \n怒抽(From Dcard梗圖版) \n福利(From Dcard西斯版)' +
+                '\n確診人數(From CDC官網數據) \n大便片(From iFunny Memes) \n讚(回覆卡通讚貼圖)');
+
         // Draw a funny meme image
         if (parseInt(msg.indexOf('怒抽')) != -1)
             dcard_meme_draw(event);
@@ -61,7 +66,7 @@ bot.on('message', function(event) {
                 'originalContentUrl': 'https://kekma.net/zzart.mp4',
                 'previewImageUrl': 'https://kekma.net/button.jpg',
             }
-            event.reply(video_msg)
+            event.reply(video_msg);
         }
 
 
@@ -181,13 +186,13 @@ function dcard_sex_draw(event) {
             for (var x = 0; x < limit; x++) {
                 if (data[x].media.length != 0)
                     for (var y = 0; y < data[x].media.length; y++)
-                        image_url_array.push(data[x].media[y].url)
+                        image_url_array.push(data[x].media[y].url);
             }
 
             // Randomly choose the image url and send message
             var random_num = Math.floor(Math.random() * image_url_array.length);
             image_url = image_url_array[random_num];
-            console.log('dcard sex image url length:', image_url_array.length)
+            console.log('dcard sex image url length:', image_url_array.length);
             console.log('dcard sex image url:', image_url);
             //Release image url array
             image_url_array.length = 0;
@@ -247,7 +252,7 @@ function meme_video(event) {
                     'originalContentUrl': mp4_url,
                     'previewImageUrl': preview_image_url,
                 }
-                event.reply(video_msg)
+                event.reply(video_msg);
             }
 
         })
@@ -280,10 +285,10 @@ function covid_19_check(event) {
             var report_exclude = '總計排除數: ' + data[0].排除 + '\n';
             var confirmed_case = '總計確診數: ' + data[0].確診 + '\n';
             var confirmed_dead = '總計死亡數: ' + data[0].死亡 + '\n';
-            var isolated_release = '總計解除隔離數: ' + data[0].解除隔離 + '\n';
+            var isolated_release = '總計解除隔離數: ' + data[0].解除隔離;
 
             event.reply(yesterday_total_report + yesterday_report_exclude + yesterday_confirmed_case + '\n' +
-                total_report + report_exclude + confirmed_case + confirmed_dead + isolated_release)
+                total_report + report_exclude + confirmed_case + confirmed_dead + isolated_release);
         }
     });
 
