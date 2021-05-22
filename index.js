@@ -26,8 +26,8 @@ bot.on('message', function(event) {
 
         // Tutorial
         if (msg.search('說明') != -1 || msg.search('指令') != -1 || msg.search('help') != -1 || msg.search('Help') != -1)
-            event.reply('目前指令有:抽(From Meme梗圖倉庫) \n抽gif(From Meme梗圖倉庫GIF) \n怒抽(From Dcard梗圖版) \n福利(From Dcard西斯版)' +
-                '\n確診人數(From CDC官網數據) \n大便片(From iFunny Memes) \n讚(回覆卡通讚貼圖)');
+            event.reply('目前指令有:\n抽 (From Meme梗圖倉庫) \n抽gif (From Meme梗圖倉庫GIF) \n怒抽 (From Dcard梗圖版) \n福利 (From Dcard西斯版)' +
+                '\n確診人數 (From CDC官網數據) \n大便片 (From iFunny Memes) \n讚 (回覆卡通讚貼圖)');
 
         // Draw a funny meme image
         if (parseInt(msg.indexOf('怒抽')) != -1)
