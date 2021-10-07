@@ -25,32 +25,32 @@ bot.on('message', function(event) {
         console.log('Recevied Message:', msg);
 
         // Tutorial
-        if (msg.search('說明') != -1 || msg.search('指令') != -1 || msg.search('help') != -1 || msg.search('Help') != -1)
+        if (msg.search('!說明') != -1 || msg.search('!指令') != -1 || msg.search('!help') != -1 || msg.search('!Help') != -1)
             event.reply('目前指令有:\n抽 (From Meme梗圖倉庫) \n抽gif (From Meme梗圖倉庫GIF) \n怒抽 (From Dcard梗圖版) \n福利 (From Dcard西斯版)' +
                 '\n確診人數 (From CDC官網數據) \n大便片 (From iFunny Memes) \n怒尻 (建議是不要打啦==)');
 
         // Draw a funny meme image
-        if (parseInt(msg.indexOf('怒抽')) != -1)
+        if (parseInt(msg.indexOf('!怒抽')) != -1)
             dcard_meme_draw(event);
 
         // Draw a random meme image
-        if (parseInt(msg.indexOf('抽')) != -1)
+        if (parseInt(msg.indexOf('!抽')) != -1)
             drawcard(event);
 
         // Draw a sexy image
-        if (parseInt(msg.indexOf('福利')) != -1 || parseInt(msg.indexOf('福z')) != -1)
+        if (parseInt(msg.indexOf('!福利')) != -1 || parseInt(msg.indexOf('福z')) != -1)
             dcard_sex_draw(event);
 
         // Draw a meme video
-        if (parseInt(msg.indexOf('大便片')) != -1)
+        if (parseInt(msg.indexOf('!大便片')) != -1)
             meme_video(event);
 
         //covid-19 check
-        if (parseInt(msg.indexOf('確診人數')) != -1)
+        if (parseInt(msg.indexOf('!確診人數')) != -1)
             covid_19_check(event);
 
         // Stricker_GOOD
-        if (parseInt(msg.indexOf('讚')) != -1 || parseInt(msg.indexOf('言贊')) != -1) {
+        if (parseInt(msg.indexOf('!讚')) != -1 || parseInt(msg.indexOf('言贊')) != -1) {
             sticker_msg = {
                 "type": "sticker",
                 "packageId": "11539",
@@ -60,7 +60,7 @@ bot.on('message', function(event) {
         }
 
         // Secret
-        if (parseInt(msg.indexOf('怒尻')) != -1) {
+        if (parseInt(msg.indexOf('!怒尻')) != -1) {
             video_msg = {
                 'type': 'video',
                 'originalContentUrl': 'https://kekma.net/zzart.mp4',
@@ -82,7 +82,7 @@ bot.on('message', function(event) {
 
 function drawcard(event) {
     var msg = event.message.text
-    if (msg.search('抽gif') != -1) {
+    if (msg.search('!抽gif') != -1) {
         // For gif image
         var random_num = Math.floor(Math.random() * 45);
         meme_url = 'https://memes.tw/gif-post?page=' + String(random_num);
@@ -130,6 +130,7 @@ function dcard_meme_draw(event) {
     const limit = 100;
     myrequest = {
         url: 'https://www.dcard.tw/service/api/v2/forums/meme/posts?&limit=' + String(limit),
+        headers: { 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36' },
         method: 'GET',
         json: true,
     }
@@ -171,6 +172,7 @@ function dcard_sex_draw(event) {
     const limit = 100;
     myrequest = {
         url: 'https://www.dcard.tw/service/api/v2/forums/sex/posts?&limit=' + String(limit),
+        headers: { 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36' },
         method: 'GET',
         json: true,
     }
