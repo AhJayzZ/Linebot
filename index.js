@@ -1,6 +1,7 @@
 const linebot = require('linebot');
 const express = require('express');
 const request = require('request');
+var cloudscraper = require('cloudscraper'); // avoid cloudflare 
 const DOMParser = require('dom-parser');
 
 
@@ -134,7 +135,7 @@ function dcard_meme_draw(event) {
         method: 'GET',
         json: true,
     }
-    request(myrequest, (error, res, data) => {
+    cloudscraper(myrequest, (error, res, data) => {
         if (error)
             return console.log('Error:', error);
         if (res.statusCode != 200)
@@ -177,7 +178,7 @@ function dcard_sex_draw(event) {
         json: true,
     }
 
-    request(myrequest, (error, res, data) => {
+    cloudscraper(myrequest, (error, res, data) => {
         if (error)
             return console.log('Error:', error);
         if (res.statusCode != 200)
