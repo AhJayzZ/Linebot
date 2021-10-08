@@ -175,6 +175,7 @@ function dcard_sex_draw(event) {
         headers: { 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36' },
         method: 'GET',
         json: true,
+        proxy: 'http://158.177.253.24:80'
     }
     request(myrequest, (error, res, data) => {
         if (error)
