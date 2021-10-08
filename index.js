@@ -1,6 +1,7 @@
 const linebot = require('linebot');
 const express = require('express');
 const request = require('request');
+const CloudflareBypasser = require('cloudflare-bypasser');
 const DOMParser = require('dom-parser');
 
 
@@ -177,7 +178,7 @@ function dcard_sex_draw(event) {
         json: true,
     }
 
-    request(myrequest, (error, res, data) => {
+    CloudflareBypasser(myrequest, (error, res, data) => {
         if (error)
             return console.log('Error:', error);
         if (res.statusCode != 200)
