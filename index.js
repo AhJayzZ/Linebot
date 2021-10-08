@@ -40,8 +40,10 @@ bot.on('message', function(event) {
             drawcard(event);
 
         // Draw a sexy image
-        if (parseInt(msg.indexOf('!福利')) != -1 || parseInt(msg.indexOf('!福z')) != -1)
+        if (parseInt(msg.indexOf('!福利')) != -1 || parseInt(msg.indexOf('!福z')) != -1) {
+            console.log('new test');
             dcard_sex_draw(event);
+        }
 
         // Draw a meme video
         if (parseInt(msg.indexOf('!大便片')) != -1)
