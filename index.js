@@ -180,6 +180,7 @@ function dcard_sex_draw(event) {
     }
 
     cf.request(myrequest, (error, res, data) => {
+        console.log('test');
         if (error)
             return console.log('Error:', error);
         if (res.statusCode != 200)
