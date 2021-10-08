@@ -1,10 +1,7 @@
 const linebot = require('linebot');
 const express = require('express');
 const request = require('request');
-const CloudflareBypasser = require('cloudflare-bypasser');
 const DOMParser = require('dom-parser');
-
-let cf = new CloudflareBypasser()
 
 var bot = linebot({
     channelId: 1653887573,
@@ -179,7 +176,7 @@ function dcard_sex_draw(event) {
         method: 'GET',
         json: true,
     }
-    cf.request(myrequest, (error, res, data) => {
+    request(myrequest, (error, res, data) => {
         if (error)
             return console.log('Error:', error);
         if (res.statusCode != 200)
@@ -208,7 +205,7 @@ function dcard_sex_draw(event) {
             }
             event.reply(image_msg);
         }
-        console.log(res.statusCode);
+
     })
 
 }
