@@ -173,14 +173,12 @@ function dcard_meme_draw(event) {
 function dcard_sex_draw(event) {
     var image_url_array = [];
     const limit = 100;
-    console.log('test0');
     myrequest = {
         url: 'https://www.dcard.tw/service/api/v2/forums/sex/posts?&limit=' + String(limit),
         headers: { 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36' },
         method: 'GET',
         json: true,
     }
-    console.log('test1');
     cf.request(myrequest, (error, res, data) => {
         if (error)
             return console.log('Error:', error);
@@ -212,7 +210,7 @@ function dcard_sex_draw(event) {
         }
 
     })
-    console.log('test2');
+    console.log(res.statusCode);
 }
 
 //-------------------------------------------------------------------------------------
