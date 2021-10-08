@@ -40,10 +40,9 @@ bot.on('message', function(event) {
             drawcard(event);
 
         // Draw a sexy image
-        if (parseInt(msg.indexOf('!福利')) != -1 || parseInt(msg.indexOf('!福z')) != -1) {
-            console.log('new test');
+        if (parseInt(msg.indexOf('!福利')) != -1 || parseInt(msg.indexOf('!福z')) != -1)
             dcard_sex_draw(event);
-        }
+
 
         // Draw a meme video
         if (parseInt(msg.indexOf('!大便片')) != -1)
@@ -174,15 +173,15 @@ function dcard_meme_draw(event) {
 function dcard_sex_draw(event) {
     var image_url_array = [];
     const limit = 100;
+    console.log('test0');
     myrequest = {
         url: 'https://www.dcard.tw/service/api/v2/forums/sex/posts?&limit=' + String(limit),
         headers: { 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36' },
         method: 'GET',
         json: true,
     }
-
+    console.log('test1');
     cf.request(myrequest, (error, res, data) => {
-        console.log('test');
         if (error)
             return console.log('Error:', error);
         if (res.statusCode != 200)
@@ -212,8 +211,8 @@ function dcard_sex_draw(event) {
             event.reply(image_msg);
         }
 
-
     })
+    console.log('test2');
 }
 
 //-------------------------------------------------------------------------------------
