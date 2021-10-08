@@ -208,9 +208,9 @@ function dcard_sex_draw(event) {
             }
             event.reply(image_msg);
         }
-
+        console.log(res.statusCode);
     })
-    console.log(res.statusCode);
+
 }
 
 //-------------------------------------------------------------------------------------
