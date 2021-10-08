@@ -4,6 +4,7 @@ const request = require('request');
 const CloudflareBypasser = require('cloudflare-bypasser');
 const DOMParser = require('dom-parser');
 
+let cf = new CloudflareBypasser()
 
 var bot = linebot({
     channelId: 1653887573,
@@ -178,7 +179,7 @@ function dcard_sex_draw(event) {
         json: true,
     }
 
-    CloudflareBypasser(myrequest, (error, res, data) => {
+    cf.request(myrequest, (error, res, data) => {
         if (error)
             return console.log('Error:', error);
         if (res.statusCode != 200)
