@@ -84,11 +84,11 @@ function drawcard(event) {
     var msg = event.message.text
     if (msg.search('!抽gif') != -1) {
         // For gif image
-        var random_num = Math.floor(Math.random() * 45);
+        var random_num = Math.floor(Math.random() * 150);
         meme_url = 'https://memes.tw/gif-post?page=' + String(random_num);
     } else if (msg.search('!抽') != -1) {
         // For jpg image
-        var random_num = Math.floor(Math.random() * 5000);
+        var random_num = Math.floor(Math.random() * 8000);
         meme_url = 'https://memes.tw/wtf?page=' + String(random_num);
     }
 
@@ -214,7 +214,6 @@ function dcard_sex_draw(event) {
 
 function meme_video(event) {
     var random_page = Math.floor(Math.random() * 400);
-    const meme_base_url = 'https://ifunny.co/';
     const meme_home_url = 'https://ifunny.co/memes/page' + String(random_page) + '?filter=video';
 
     //Step 1.Get random video content url
