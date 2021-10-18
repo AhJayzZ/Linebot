@@ -230,6 +230,7 @@ function meme_video(event) {
             var videoClass = htmlDoc.getElementsByClassName('_26gD _3_Go')[0];
             var videoInnerClass = videoClass.getElementsByClassName('_3brC')[random_index];
             var videoUrl = videoInnerClass.getElementsByClassName('_2bHN')[0].getAttribute('data-src');
+            var videoPreviewImage = videoInnerClass.getElementsByClassName('_2bHN')[0].getAttribute('poster');
             console.log('Meme Video Url:' + videoUrl);
         }
 
@@ -237,7 +238,7 @@ function meme_video(event) {
         var video_msg = {
             'type': 'video',
             'originalContentUrl': videoUrl,
-            'previewImageUrl': videoUrl,
+            'previewImageUrl': videoPreviewImage,
         }
         event.reply(video_msg);
     })
