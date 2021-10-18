@@ -230,31 +230,31 @@ function meme_video(event) {
             var htmlDoc = parser.parseFromString(body, 'text/html');
         }
 
-        //Step 2.Get mp4 in video url
-        request(video_url, { method: 'GET' }, (error, res, body) => {
-            if (error)
-                return console.log('Error:', error);
-            if (res.statusCode != 200)
-                return console.log('Status code:', res.statusCode);
-            if (!error & res.statusCode == 200) {
-                const parser = new DOMParser();
-                var htmlDoc = parser.parseFromString(body, 'text/html');
-                var preview_image_class_name = htmlDoc.getElementsByClassName('js-media-player')[0];
-                var preview_image_url = preview_image_class_name.getAttribute('poster');
-                var mp4_class_name = htmlDoc.getElementsByClassName('media media_fun js-media js-playlist-media ')[0];
-                var mp4_url = mp4_class_name.getAttribute('data-source');
-                console.log('mp4_url:', mp4_url);
+        // //Step 2.Get mp4 in video url
+        // request(video_url, { method: 'GET' }, (error, res, body) => {
+        //     if (error)
+        //         return console.log('Error:', error);
+        //     if (res.statusCode != 200)
+        //         return console.log('Status code:', res.statusCode);
+        //     if (!error & res.statusCode == 200) {
+        //         const parser = new DOMParser();
+        //         var htmlDoc = parser.parseFromString(body, 'text/html');
+        //         var preview_image_class_name = htmlDoc.getElementsByClassName('js-media-player')[0];
+        //         var preview_image_url = preview_image_class_name.getAttribute('poster');
+        //         var mp4_class_name = htmlDoc.getElementsByClassName('media media_fun js-media js-playlist-media ')[0];
+        //         var mp4_url = mp4_class_name.getAttribute('data-source');
+        //         console.log('mp4_url:', mp4_url);
 
-                // Step 3.Sending the video 
-                var video_msg = {
-                    'type': 'video',
-                    'originalContentUrl': mp4_url,
-                    'previewImageUrl': preview_image_url,
-                }
-                event.reply(video_msg);
-            }
+        //         // Step 3.Sending the video 
+        //         var video_msg = {
+        //             'type': 'video',
+        //             'originalContentUrl': mp4_url,
+        //             'previewImageUrl': preview_image_url,
+        //         }
+        //         event.reply(video_msg);
+        //     }
 
-        })
+        // })
 
     })
 }
