@@ -231,8 +231,8 @@ function meme_video(event) {
             var videoClass = htmlDoc.getElementsByClassName('_26gD _3_Go')[0];
             var videoInnerClass = videoClass.getElementsByClassName('_3brC')[random_index]
             var FinalClassName = videoInnerClass.getElementsByClassName('_3JkW _2YST')[0]
-            var videoUrl = FinalClassName.getAttribute('src')
-            console.log(videoUrl)
+                //var videoUrl = FinalClassName.getAttribute('src')
+            console.log(FinalClassName.textContent)
         }
 
         // //Step 2.Get mp4 in video url
