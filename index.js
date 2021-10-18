@@ -228,9 +228,6 @@ function meme_video(event) {
             const parser = new DOMParser();
             var random_index = Math.floor(Math.random() * 20);
             var htmlDoc = parser.parseFromString(body, 'text/html');
-            var video_class_name = htmlDoc.getElementsByClassName('grid__link js-goalcollector-action js-dwhcollector-actionsource')[random_index];
-            var video_url = meme_base_url + String(video_class_name.getAttribute('href'));
-            console.log('video_url:', video_url);
         }
 
         //Step 2.Get mp4 in video url
