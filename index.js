@@ -237,8 +237,8 @@ function meme_video(event) {
         // Step 2.Sending the video 
         var video_msg = {
             'type': 'video',
-            'originalContentUrl': mp4_url,
-            'previewImageUrl': preview_image_url,
+            'originalContentUrl': videoUrl,
+            'previewImageUrl': videoUrl,
         }
         event.reply(video_msg);
     })
