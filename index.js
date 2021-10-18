@@ -228,7 +228,7 @@ function meme_video(event) {
             const parser = new DOMParser();
             var random_index = Math.floor(Math.random() * 20);
             var htmlDoc = parser.parseFromString(body, 'text/html');
-            var videourl = htmlDoc.getElementsByClassName('_26gD _3_Go');
+            var videourl = htmlDoc.getElementsByClassName('_2Uj_');
             console.log(videourl)
         }
 
