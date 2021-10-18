@@ -230,7 +230,8 @@ function meme_video(event) {
             var htmlDoc = parser.parseFromString(body, 'text/html');
             var videoClass = htmlDoc.getElementsByClassName('_26gD _3_Go')[0];
             var videoInnerClass = videoClass.getElementsByClassName('_3brC')[random_index]
-            console.log(videoInnerClass.innerHTML)
+            var FinalClassName = videoInnerClass.getElementsByClassName('_3JkW _2YST')[0]
+            console.log(FinalClassName.innerHTML)
         }
 
         // //Step 2.Get mp4 in video url
