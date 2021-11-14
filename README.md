@@ -2,6 +2,7 @@
 
 ## 簡介 Introduction
 如果無聊或想放鬆，這時候就可以打開Linebot機器人**抽點好笑的圖片或是影片放輕鬆**，應用了JavaScript和Line API進行開發，最後部屬到Heroku平台。
+![](https://i.imgur.com/u3xbFFV.png)
 
 ----------------------------------------
 
