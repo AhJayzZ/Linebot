@@ -42,7 +42,7 @@ bot.on('message', function(event) {
 
 
         // Draw a meme video
-        if (parseInt(msg.indexOf('!抽影片')) != -1)
+        if (parseInt(msg.indexOf('!看短片')) != -1)
             meme_video(event);
 
         //covid-19 check
