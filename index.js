@@ -213,7 +213,7 @@ function dcard_sex_draw(event) {
 //-------------------------------------------------------------------------------------
 
 function meme_video(event) {
-    var random_page = Math.floor(Math.random() * 999);
+    var random_page = Math.floor(Math.random() * 800);
     const meme_home_url = 'https://ifunny.co/memes/page' + String(random_page) + '?filter=video';
 
     //Step 1.Get random video content url
@@ -228,7 +228,7 @@ function meme_video(event) {
             var htmlDoc = parser.parseFromString(body, 'text/html');
             var videoClass = htmlDoc.getElementsByClassName('_26gD _3_Go')[0];
             var videoInnerClass = videoClass.getElementsByClassName('_3brC')[random_index];
-            var videoUrl = videoInnerClass.getElementsByClassName('_2bHN')[0].getAttribute('data-src');
+            var videoUrl = videoInnerClass.getElementsByClassName('_3JkW _2YST')[0].getAttribute('data-src');
             console.log('Meme Video Url:' + videoUrl);
         }
 
