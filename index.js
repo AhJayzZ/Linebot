@@ -42,7 +42,7 @@ bot.on('message', function(event) {
 
 
         // Draw a meme video
-        if (parseInt(msg.indexOf('!大便片')) != -1)
+        if (parseInt(msg.indexOf('!抽影片')) != -1)
             meme_video(event);
 
         //covid-19 check
@@ -88,7 +88,7 @@ function drawcard(event) {
         meme_url = 'https://memes.tw/gif-post?page=' + String(random_num);
     } else if (msg.search('!抽') != -1) {
         // For jpg image
-        var random_num = Math.floor(Math.random() * 8000);
+        var random_num = Math.floor(Math.random() * 8500);
         meme_url = 'https://memes.tw/wtf?page=' + String(random_num);
     }
 
@@ -213,8 +213,8 @@ function dcard_sex_draw(event) {
 //-------------------------------------------------------------------------------------
 
 function meme_video(event) {
-    var random_page = Math.floor(Math.random() * 400);
-    const meme_home_url = 'https://ifunny.co/memes/page' + String(random_page) + '?filter=video';
+    var random_page = Math.floor(Math.random() * 999);
+    const meme_home_url = '' + String(random_page) + '?filter=video';
 
     //Step 1.Get random video content url
     request(meme_home_url, { method: 'GET' }, (error, res, body) => {
