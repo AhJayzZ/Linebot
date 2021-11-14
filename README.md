@@ -1,18 +1,20 @@
 # 抽卡機器人 Linebot
 
 ## 簡介 Introduction
-如果無聊或想放鬆，這時候就可以打開Linebot機器人**抽點好笑的圖片或是影片放輕鬆**，應用了JavaScript和Line API進行開發，最後部屬到Heroku平台。
+如果無聊或想放鬆，這時候就可以打開Linebot機器人**抽點好笑的圖片或是影片放輕鬆**，主要應用Node.js和Line API進行開發並應用爬蟲(Web Scraping)技巧抓取網頁的圖片或影片的連結，最後部屬到Heroku平台常駐使用。
 
 ![](https://i.imgur.com/u3xbFFV.png)
 
 ----------------------------------------
 
 ## 環境設定 Environment
-- 1.開發環境:**Python 3.7.8開發**
-- 2.終端機執行 ```pip install -r requirements.txt``` 安裝會使用到的套件
+- 1.開發環境:**Node.js v14.17.0開發**
+- 2.終端機執行 ```npm install``` 安裝會使用到的套件
 - 3.使用工具:
-    - 解析套件:```beautifulsoup4==4.10.0```
-    - 網頁請求套件:```requests==2.25.1```
+    * 解析DOM元件:```dom-parser^0.1.6```
+    * 建立框架:```express^4.17.1```
+    * LineAPI:```linebot: "^1.6.1```
+    * 請求網頁內容:```request^2.88.2```
 
 ----------------------------------------
 
