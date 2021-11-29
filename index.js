@@ -1,18 +1,17 @@
+const path = require('path')
 const linebot = require('linebot');
 const express = require('express');
 const request = require('request');
 const DOMParser = require('dom-parser');
+const APIs = require('dotenv').config({ path: path.join(__dirname, '/.env') }).parsed;
 
 var bot = linebot({
-    channelId: 1653887573,
-    channelSecret: '7e6117cb1d36b389c79a95994bb63965',
-    channelAccessToken: 'RkwD54gpuR39YS+FYVZJgcnODhWiCCFhBjFBqMdVo8MmYGioCDUP7mBJnnfzTh/bE4RYEXdy4gBCjzlxoxbatgbydcYLub6VpDq/akUUdtsi+Pxc67WLgHMIg2d9cIYlPRkrP08aX5p7oZLThtXccwdB04t89/1O/w1cDnyilFU=',
-
+    channelId: APIs.channelId,
+    channelSecret: APIs.channelSecret,
+    channelAccessToken: APIs.channelAccessToken,
 });
 
 //-------------------------------------------------------------------------
-
-
 
 bot.on('message', function(event) {
     // Log the event
