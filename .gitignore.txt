@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 node_modules/
 
 .env
 *.env
+=======
+node_modules
+>>>>>>> 1dbef2f (make it better)
