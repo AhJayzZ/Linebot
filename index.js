@@ -2,12 +2,12 @@ const linebot = require('linebot');
 const express = require('express');
 const request = require('request');
 const DOMParser = require('dom-parser');
-const APIs = request('dotenv').config()
+const APIs = require('dotenv').config({ path: __dirname + '/.env' }).parsed
 
 var bot = linebot({
-    channelId: APIs.env.channelId,
-    channelSecret: APIs.env.channelSecret,
-    channelAccessToken: APIs.env.channelAccessToken,
+    channelId: APIs.channelId,
+    channelSecret: APIs.channelSecret,
+    channelAccessToken: APIs.channelAccessToken,
 });
 
 //-------------------------------------------------------------------------
