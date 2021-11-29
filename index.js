@@ -1,9 +1,8 @@
-const path = require('path')
 const linebot = require('linebot');
 const express = require('express');
 const request = require('request');
 const DOMParser = require('dom-parser');
-const APIs = require('dotenv').config({ path: path.join(__dirname, '/.env') }).parsed;
+const APIs = require('dotenv').config({ path: __dirname + '/.env' }).parsed
 
 var bot = linebot({
     channelId: APIs.channelId,
