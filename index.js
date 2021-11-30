@@ -266,10 +266,9 @@ function covid_19_check(event) {
             var report_exclude = '總計排除數: ' + data[0].排除 + '\n';
             var confirmed_case = '總計確診數: ' + data[0].確診 + '\n';
             var confirmed_dead = '總計死亡數: ' + data[0].死亡 + '\n';
-            var isolated_release = '總計解除隔離數: ' + data[0].解除隔離;
 
             event.reply(yesterday_total_report + yesterday_report_exclude + yesterday_confirmed_case + '\n' +
-                total_report + report_exclude + confirmed_case + confirmed_dead + isolated_release);
+                total_report + report_exclude + confirmed_case + confirmed_dead);
         }
     });
 
